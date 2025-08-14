@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { TextBox } from '@/components/ui/TextBox';
 import { HorizontalBarChart } from '@/components/charts/HorizontalBarChart';
+import { CircularProgress } from '@/components/ui/CircularProgress';
 import { surveyData } from '@/data/surveyData';
 
 export function SurveySection() {
@@ -58,12 +59,28 @@ export function SurveySection() {
           >
             <div className="min-h-screen flex items-center justify-center">
               {!item.hasGraph ? (
-                <TextBox
-                  heading={item.heading}
-                  text={item.text}
-                  isVisible={visibleItems.has(index)}
-                  variant={item.variant}
-                />
+                <div className="flex flex-col items-center space-y-12">
+                  {index === 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                      transition={{ duration: 0.8, delay: 0.2 }}
+                    >
+                      <CircularProgress
+                        percentage={84}
+                        isVisible={visibleItems.has(index)}
+                        size={200}
+                        strokeWidth={12}
+                      />
+                    </motion.div>
+                  )}
+                  <TextBox
+                    heading={item.heading}
+                    text={item.text}
+                    isVisible={visibleItems.has(index)}
+                    variant={item.variant}
+                  />
+                </div>
               ) : (
                 <div className="w-full max-w-4xl space-y-16">
                   <TextBox
