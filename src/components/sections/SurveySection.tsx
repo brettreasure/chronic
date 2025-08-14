@@ -86,33 +86,54 @@ export function SurveySection() {
                 </div>
               ) : (
                 <div className="w-full max-w-4xl space-y-16">
-                  <TextBox
-                    heading={item.heading}
-                    text={item.text}
-                    isVisible={visibleItems.has(index)}
-                    variant={item.variant}
-                  />
-                  
-                  {item.graph && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 50 }}
-                      animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-                      transition={{ duration: 0.8, delay: 0.6 }}
-                    >
-                      {item.isVerticalChart ? (
-                        <VerticalBarChart
-                          title={item.graph.title}
-                          data={item.graph.data}
-                          isVisible={visibleItems.has(index)}
-                        />
-                      ) : (
-                        <HorizontalBarChart
-                          title={item.graph.title}
-                          data={item.graph.data}
-                          isVisible={visibleItems.has(index)}
-                        />
+                  {item.isVerticalChart ? (
+                    <div className="flex flex-col items-center space-y-12">
+                      <motion.p
+                        className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body text-center max-w-2xl leading-relaxed"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
+                      >
+                        {item.text}
+                      </motion.p>
+                      {item.graph && (
+                        <motion.div
+                          className="w-1/2"
+                          initial={{ opacity: 0, y: 50 }}
+                          animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                          transition={{ duration: 0.8, delay: 0.6 }}
+                        >
+                          <VerticalBarChart
+                            title={item.graph.title}
+                            data={item.graph.data}
+                            isVisible={visibleItems.has(index)}
+                          />
+                        </motion.div>
                       )}
-                    </motion.div>
+                    </div>
+                  ) : (
+                    <>
+                      <TextBox
+                        heading={item.heading}
+                        text={item.text}
+                        isVisible={visibleItems.has(index)}
+                        variant={item.variant}
+                      />
+                      
+                      {item.graph && (
+                        <motion.div
+                          initial={{ opacity: 0, y: 50 }}
+                          animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                          transition={{ duration: 0.8, delay: 0.6 }}
+                        >
+                          <HorizontalBarChart
+                            title={item.graph.title}
+                            data={item.graph.data}
+                            isVisible={visibleItems.has(index)}
+                          />
+                        </motion.div>
+                      )}
+                    </>
                   )}
                 </div>
               )}

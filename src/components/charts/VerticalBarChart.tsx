@@ -48,6 +48,7 @@ export function VerticalBarChart({ title, data, isVisible }: VerticalBarChartPro
         borderWidth: 1,
         borderRadius: 6,
         borderSkipped: false,
+        maxBarThickness: 60,
       },
     ],
   };
