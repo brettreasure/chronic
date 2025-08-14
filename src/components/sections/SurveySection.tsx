@@ -18,6 +18,12 @@ export function SurveySection() {
           const index = parseInt(entry.target.getAttribute('data-index') || '0');
           if (entry.isIntersecting) {
             setVisibleItems(prev => new Set([...prev, index]));
+          } else {
+            setVisibleItems(prev => {
+              const newSet = new Set([...prev]);
+              newSet.delete(index);
+              return newSet;
+            });
           }
         });
       },

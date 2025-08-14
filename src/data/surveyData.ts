@@ -2,7 +2,7 @@ export interface SurveyDataPoint {
   heading: string;
   text: string;
   hasGraph: boolean;
-  variant?: 'default' | 'dark-cyan';
+  variant?: 'default' | 'dark-cyan' | 'double-border';
   graph?: {
     title: string;
     data: Array<{
@@ -18,11 +18,13 @@ export const surveyData: SurveyDataPoint[] = [
     heading: "84%",
     text: "84% of participants completed the program",
     hasGraph: false,
+    variant: "double-border",
   },
   {
     heading: "97%",
     text: "97% of those who completed the program rated CCA strongly/highly professional",
     hasGraph: true,
+    variant: "dark-cyan",
     graph: {
       title: "Service level",
       data: [
@@ -50,6 +52,7 @@ export const surveyData: SurveyDataPoint[] = [
     heading: "97%",
     text: "97% said their individual needs were supported",
     hasGraph: true,
+    variant: "dark-cyan",
     graph: {
       title: "Individual needs",
       data: [
@@ -63,6 +66,7 @@ export const surveyData: SurveyDataPoint[] = [
     heading: "95%",
     text: "95% would recommend the program to others",
     hasGraph: true,
+    variant: "dark-cyan",
     graph: {
       title: "Recommendation",
       data: [
@@ -82,6 +86,7 @@ export const surveyData: SurveyDataPoint[] = [
     heading: "99%",
     text: "99% say the program added value or 'significant value' to their health and quality of life",
     hasGraph: true,
+    variant: "dark-cyan",
     graph: {
       title: "Significance",
       data: [

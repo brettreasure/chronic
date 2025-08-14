@@ -56,8 +56,10 @@ export function HorizontalBarChart({ title, data, isVisible }: HorizontalBarChar
     indexAxis: 'y' as const,
     maintainAspectRatio: false,
     animation: {
-      duration: isVisible ? 2000 : 0,
-      delay: isVisible ? 300 : 0,
+      duration: 2000,
+      delay: (context: { datasetIndex: number; dataIndex: number }) => {
+        return context.dataIndex * 200 + 300;
+      },
       easing: 'easeOutQuart' as const,
     },
     plugins: {
@@ -133,7 +135,12 @@ export function HorizontalBarChart({ title, data, isVisible }: HorizontalBarChar
       transition={{ duration: 0.6, delay: 0.2 }}
     >
       <div className="h-80 mb-6">
-        <Bar ref={chartRef} data={chartData} options={options} />
+        <Bar 
+          key={isVisible ? 'visible' : 'hidden'} 
+          ref={chartRef} 
+          data={chartData} 
+          options={options} 
+        />
       </div>
       
       <div className="space-y-3">
