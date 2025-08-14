@@ -5,7 +5,7 @@ import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background-light dark:bg-background-dark transition-colors duration-300">
+    <div className="min-h-screen bg-[#F7F5EF] dark:bg-[#1a1a1a] transition-colors duration-300">
       <Header />
       <main>
         <HeroSection />
