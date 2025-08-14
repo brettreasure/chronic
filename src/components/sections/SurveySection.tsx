@@ -70,16 +70,18 @@ export function SurveySection() {
                         percentage={84}
                         isVisible={visibleItems.has(index)}
                         size={200}
-                        strokeWidth={12}
+                        strokeWidth={24}
                       />
                     </motion.div>
                   )}
-                  <TextBox
-                    heading={item.heading}
-                    text={item.text}
-                    isVisible={visibleItems.has(index)}
-                    variant={item.variant}
-                  />
+                  <motion.p
+                    className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body text-center max-w-2xl leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                    transition={{ duration: 0.6, delay: 0.8 }}
+                  >
+                    {item.text}
+                  </motion.p>
                 </div>
               ) : (
                 <div className="w-full max-w-4xl space-y-16">
