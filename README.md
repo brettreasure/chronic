@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chronic Care Australia - The 90 Study
+
+A visually impressive single-page website showcasing survey results with smooth scroll animations and interactive charts.
+
+## Features
+
+- 🎨 **Modern Design**: Clean, crisp design with custom color scheme (#F7F5EF background, #004146 primary)
+- 📊 **Interactive Charts**: Horizontal bar charts using Chart.js with smooth animations
+- 🌙 **Dark/Light Mode**: Toggle between themes with smooth transitions
+- 📱 **Responsive**: Fully responsive design for all device sizes
+- ✨ **Scroll Animations**: Smooth scroll-triggered animations using Framer Motion
+- 🎯 **Accessibility**: WCAG compliant with proper focus states and aria labels
+
+## Tech Stack
+
+- **Framework**: Next.js 15 with TypeScript
+- **Styling**: TailwindCSS with custom configuration
+- **Charts**: Chart.js with react-chartjs-2
+- **Animations**: Framer Motion
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Local Development
+
+1. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+3. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+### Building for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project is configured for automatic deployment to Vercel:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npx vercel --prod
+```
 
-## Learn More
+## Survey Data
 
-To learn more about Next.js, take a look at the following resources:
+Survey data includes:
+- 84% completion rate
+- 97% professional service rating  
+- 92% found program easy to adhere to
+- 97% individual needs supported
+- 95% would recommend to others
+- 88% specified symptom improvement
+- 99% added value to health and quality of life
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Email: admin@chroniccare.com.au  
+- Phone: (08) 9385 1430
