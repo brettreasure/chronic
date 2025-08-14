@@ -3,6 +3,7 @@ export interface SurveyDataPoint {
   text: string;
   hasGraph: boolean;
   variant?: 'default' | 'dark-cyan' | 'double-border';
+  isVerticalChart?: boolean;
   graph?: {
     title: string;
     data: Array<{
@@ -30,19 +31,19 @@ export const surveyData: SurveyDataPoint[] = [
       data: [
         { label: "Satisfactory", value: 3, color: "#ff6b6b" },
         { label: "Strong in most areas", value: 26, color: "#4ecdc4" },
-        { label: "Highly professional and polished", value: 71, color: "#004146" },
+        { label: "Highly professional", value: 71, color: "#004146" },
       ],
     },
   },
   {
     heading: "92%",
-    text: "92% found the program fairly easy or easy to adhere to",
+    text: "92% found the program fairly easy\nor easy to adhere to",
     hasGraph: true,
     variant: "dark-cyan",
     graph: {
       title: "Difficulty",
       data: [
-        { label: "Had trouble adhering to the program", value: 8, color: "#ff6b6b" },
+        { label: "Had trouble", value: 8, color: "#ff6b6b" },
         { label: "Fairly easy", value: 23, color: "#4ecdc4" },
         { label: "Very easy", value: 69, color: "#004146" },
       ],
@@ -56,7 +57,7 @@ export const surveyData: SurveyDataPoint[] = [
     graph: {
       title: "Individual needs",
       data: [
-        { label: "Didn't fit my individual needs", value: 3, color: "#ff6b6b" },
+        { label: "Didn't fit my needs", value: 3, color: "#ff6b6b" },
         { label: "Yes - in most ways", value: 26, color: "#4ecdc4" },
         { label: "Yes - very much so", value: 71, color: "#004146" },
       ],
@@ -70,7 +71,7 @@ export const surveyData: SurveyDataPoint[] = [
     graph: {
       title: "Recommendation",
       data: [
-        { label: "Would not recommend", value: 0, color: "#ff6b6b" },
+        { label: "Won't recommend", value: 0, color: "#ff6b6b" },
         { label: "May recommend", value: 5, color: "#4ecdc4" },
         { label: "Yes - would recommend", value: 95, color: "#004146" },
       ],
@@ -79,8 +80,16 @@ export const surveyData: SurveyDataPoint[] = [
   {
     heading: "88%",
     text: "88% were able to specify one symptom of improvement. 61% nominated two or more improved symptoms",
-    hasGraph: false,
+    hasGraph: true,
     variant: "dark-cyan",
+    isVerticalChart: true,
+    graph: {
+      title: "Improved symptoms",
+      data: [
+        { label: "One or more symptoms", value: 88, color: "#8B1538" },
+        { label: "Two or more symptoms", value: 61, color: "#8B1538" },
+      ],
+    },
   },
   {
     heading: "99%",

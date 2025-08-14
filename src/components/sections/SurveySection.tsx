@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { TextBox } from '@/components/ui/TextBox';
 import { HorizontalBarChart } from '@/components/charts/HorizontalBarChart';
+import { VerticalBarChart } from '@/components/charts/VerticalBarChart';
 import { CircularProgress } from '@/components/ui/CircularProgress';
 import { surveyData } from '@/data/surveyData';
 
@@ -98,11 +99,19 @@ export function SurveySection() {
                       animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
                       transition={{ duration: 0.8, delay: 0.6 }}
                     >
-                      <HorizontalBarChart
-                        title={item.graph.title}
-                        data={item.graph.data}
-                        isVisible={visibleItems.has(index)}
-                      />
+                      {item.isVerticalChart ? (
+                        <VerticalBarChart
+                          title={item.graph.title}
+                          data={item.graph.data}
+                          isVisible={visibleItems.has(index)}
+                        />
+                      ) : (
+                        <HorizontalBarChart
+                          title={item.graph.title}
+                          data={item.graph.data}
+                          isVisible={visibleItems.has(index)}
+                        />
+                      )}
                     </motion.div>
                   )}
                 </div>

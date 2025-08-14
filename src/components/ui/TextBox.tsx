@@ -50,7 +50,7 @@ export function TextBox({ heading, text, isVisible, variant = 'default' }: TextB
       </motion.h2>
       
       <motion.p 
-        className={`text-xl sm:text-2xl font-body leading-relaxed relative z-10 ${
+        className={`text-xl sm:text-2xl font-body leading-relaxed relative z-10 whitespace-pre-line ${
           isDarkCyan 
             ? 'text-white' 
             : 'text-gray-700 dark:text-gray-300'
