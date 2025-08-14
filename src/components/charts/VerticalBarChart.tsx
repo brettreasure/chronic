@@ -38,13 +38,16 @@ interface VerticalBarChartProps {
 export function VerticalBarChart({ title, data, isVisible }: VerticalBarChartProps) {
   const chartRef = useRef<ChartJS<'bar'>>(null);
 
+  // Reverse the order for the chart display only
+  const reversedData = [...data].reverse();
+  
   const chartData = {
-    labels: data.map(item => item.label),
+    labels: reversedData.map(item => item.label),
     datasets: [
       {
-        data: data.map(item => item.value),
-        backgroundColor: data.map(item => item.color || '#8B1538'),
-        borderColor: data.map(item => item.color || '#8B1538'),
+        data: reversedData.map(item => item.value),
+        backgroundColor: reversedData.map(item => item.color || '#8B1538'),
+        borderColor: reversedData.map(item => item.color || '#8B1538'),
         borderWidth: 1,
         borderRadius: 6,
         borderSkipped: false,
@@ -130,7 +133,7 @@ export function VerticalBarChart({ title, data, isVisible }: VerticalBarChartPro
 
   return (
     <motion.div 
-      className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg"
+      className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-2xl shadow-gray-500/20"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.6, delay: 0.2 }}

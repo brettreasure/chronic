@@ -130,7 +130,7 @@ export function HorizontalBarChart({ title, data, isVisible }: HorizontalBarChar
 
   return (
     <motion.div 
-      className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg"
+      className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-2xl shadow-gray-500/20"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.6, delay: 0.2 }}
