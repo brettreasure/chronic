@@ -65,7 +65,7 @@ export function CircularProgress({
         animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.6, delay: 1.2 }}
       >
-        <span className="text-7xl font-headline font-bold text-[#8B1538]">
+        <span className="text-6xl font-headline font-bold text-[#8B1538] tracking-tighter">
           {percentage}%
         </span>
       </motion.div>
