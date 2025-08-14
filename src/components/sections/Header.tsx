@@ -6,9 +6,11 @@ export function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-headline font-bold text-primary dark:text-primary-dark">
-              Chronic Care Australia
-            </h1>
+            <img 
+              src="/cca_logo.webp" 
+              alt="Chronic Care Australia" 
+              className="h-10 w-auto"
+            />
           </div>
           <ThemeToggle />
         </div>
