@@ -8,6 +8,7 @@ export interface SurveyDataPoint {
     title: string;
     data: Array<{
       label: string;
+      description?: string;
       value: number;
       color?: string;
     }>;
@@ -29,9 +30,9 @@ export const surveyData: SurveyDataPoint[] = [
     graph: {
       title: "Service level",
       data: [
-        { label: "Satisfactory", value: 3, color: "#ff6b6b" },
-        { label: "Strong in most areas", value: 26, color: "#4ecdc4" },
-        { label: "Highly professional", value: 71, color: "#004146" },
+        { label: "Satisfactory", description: "Satisfactory", value: 3, color: "#ff6b6b" },
+        { label: "Strong in most areas", description: "Strong in most areas", value: 26, color: "#4ecdc4" },
+        { label: "Highly professional", description: "Highly professional and polished", value: 71, color: "#004146" },
       ],
     },
   },
@@ -43,9 +44,9 @@ export const surveyData: SurveyDataPoint[] = [
     graph: {
       title: "Difficulty",
       data: [
-        { label: "Had trouble", value: 8, color: "#ff6b6b" },
-        { label: "Fairly easy", value: 23, color: "#4ecdc4" },
-        { label: "Very easy", value: 69, color: "#004146" },
+        { label: "Had trouble", description: "Had trouble adhering to the program", value: 8, color: "#ff6b6b" },
+        { label: "Fairly easy", description: "Fairly easy", value: 23, color: "#4ecdc4" },
+        { label: "Very easy", description: "Very easy", value: 69, color: "#004146" },
       ],
     },
   },
@@ -57,9 +58,9 @@ export const surveyData: SurveyDataPoint[] = [
     graph: {
       title: "Individual needs",
       data: [
-        { label: "Didn't fit my needs", value: 3, color: "#ff6b6b" },
-        { label: "Yes - in most ways", value: 26, color: "#4ecdc4" },
-        { label: "Yes - very much so", value: 71, color: "#004146" },
+        { label: "Didn't fit my needs", description: "Didn't fit my individual needs", value: 3, color: "#ff6b6b" },
+        { label: "Yes - in most ways", description: "Yes - in most ways", value: 26, color: "#4ecdc4" },
+        { label: "Yes - very much so", description: "Yes - very much so", value: 71, color: "#004146" },
       ],
     },
   },
@@ -71,9 +72,9 @@ export const surveyData: SurveyDataPoint[] = [
     graph: {
       title: "Recommendation",
       data: [
-        { label: "Won't recommend", value: 0, color: "#ff6b6b" },
-        { label: "May recommend", value: 5, color: "#4ecdc4" },
-        { label: "Yes - would recommend", value: 95, color: "#004146" },
+        { label: "Won't recommend", description: "Would not recommend", value: 0, color: "#ff6b6b" },
+        { label: "May recommend", description: "May recommend", value: 5, color: "#4ecdc4" },
+        { label: "Yes - would recommend", description: "Yes - would recommend", value: 95, color: "#004146" },
       ],
     },
   },

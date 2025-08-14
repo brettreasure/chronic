@@ -24,6 +24,7 @@ ChartJS.register(
 
 interface DataPoint {
   label: string;
+  description?: string;
   value: number;
   color?: string;
 }
@@ -153,7 +154,7 @@ export function HorizontalBarChart({ title, data, isVisible }: HorizontalBarChar
             transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
           >
             <span className="font-medium text-gray-700 dark:text-gray-300">
-              {item.label}
+              {item.description || item.label}
             </span>
             <span className="text-lg font-bold text-primary dark:text-primary-dark">
               {item.value}%
