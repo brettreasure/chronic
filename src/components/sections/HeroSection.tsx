@@ -27,14 +27,18 @@ export function HeroSection() {
               The study was conducted over three years and involved 177 participants.
             </p>
           </div>
-          
+
           <motion.div 
             className="mt-12 flex justify-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <div className="w-16 h-1 bg-primary dark:bg-primary-dark rounded-full" />
+            <img 
+              src="/cca_logo.webp" 
+              alt="Chronic Care Australia" 
+              className="h-20 w-auto max-w-[50%]"
+            />
           </motion.div>
         </motion.div>
       </div>

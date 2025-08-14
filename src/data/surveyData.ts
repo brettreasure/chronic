@@ -2,6 +2,7 @@ export interface SurveyDataPoint {
   heading: string;
   text: string;
   hasGraph: boolean;
+  variant?: 'default' | 'dark-cyan';
   graph?: {
     title: string;
     data: Array<{
@@ -35,6 +36,7 @@ export const surveyData: SurveyDataPoint[] = [
     heading: "92%",
     text: "92% found the program fairly easy or easy to adhere to",
     hasGraph: true,
+    variant: "dark-cyan",
     graph: {
       title: "Difficulty",
       data: [
@@ -74,6 +76,7 @@ export const surveyData: SurveyDataPoint[] = [
     heading: "88%",
     text: "88% were able to specify one symptom of improvement. 61% nominated two or more improved symptoms",
     hasGraph: false,
+    variant: "dark-cyan",
   },
   {
     heading: "99%",

@@ -56,6 +56,7 @@ export function SurveySection() {
                   heading={item.heading}
                   text={item.text}
                   isVisible={visibleItems.has(index)}
+                  variant={item.variant}
                 />
               ) : (
                 <div className="w-full max-w-4xl space-y-16">
@@ -63,6 +64,7 @@ export function SurveySection() {
                     heading={item.heading}
                     text={item.text}
                     isVisible={visibleItems.has(index)}
+                    variant={item.variant}
                   />
                   
                   {item.graph && (
