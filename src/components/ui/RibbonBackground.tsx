@@ -9,31 +9,41 @@ export function RibbonBackground() {
     const totalHeight = 6000; // Long enough to cover full page
     const centerX = 50; // Center percentage
     
-    for (let y = 0; y <= totalHeight; y += 100) {
-      // Main meandering motion
-      const meander = Math.sin(y * 0.002 + offset) * 15;
+    for (let y = 0; y <= totalHeight; y += 80) {
+      // More sinuous main meandering motion
+      const meander = Math.sin(y * 0.003 + offset) * 18;
+      const meander2 = Math.sin(y * 0.0015 + offset * 1.5) * 12;
       
       // Occasional left/right drift
-      const drift = Math.sin(y * 0.0008 + offset * 2) * 8;
+      const drift = Math.sin(y * 0.0012 + offset * 2) * 10;
+      
+      // Parallel detection - create neat parallel sections
+      const parallelCycle = Math.sin(y * 0.0008 + offset * 2.5);
+      const isParallel = parallelCycle > 0.3; // About 2/3 of the time
       
       // Separation effect - lines briefly separate and tangle
-      const separationCycle = Math.sin(y * 0.001 + offset * 3);
-      const isSeparated = separationCycle > 0.6; // About 1/3 of the time
+      const separationCycle = Math.sin(y * 0.0015 + offset * 3);
+      const isSeparated = separationCycle > 0.7 && !isParallel; // About 1/3 of remaining time
       
-      let x = centerX + meander + drift;
+      let x = centerX + meander + meander2 + drift;
       
-      if (isSeparated) {
+      if (isParallel) {
+        // When parallel, keep lines very close and aligned
+        x = centerX + meander * 0.6 + separation * 0.2;
+      } else if (isSeparated) {
         // When separated, add tangling motion
-        const tangle = Math.sin(y * 0.005 + offset * 4) * separation * 2;
-        x += tangle;
+        const tangle = Math.sin(y * 0.006 + offset * 4) * separation * 3;
+        const tangle2 = Math.cos(y * 0.004 + offset * 5) * separation * 2;
+        x += tangle + tangle2;
       } else {
-        // When parallel, keep lines close
-        x += separation * 0.3;
+        // Regular flowing motion
+        x += separation * 0.4;
       }
       
-      // Add subtle randomness
-      const randomness = Math.sin(y * 0.01 + offset * 5) * 1;
-      x += randomness;
+      // Add more sinuous curves
+      const curve1 = Math.sin(y * 0.008 + offset * 6) * 2;
+      const curve2 = Math.cos(y * 0.012 + offset * 7) * 1.5;
+      x += curve1 + curve2;
       
       points.push(`${x},${y}`);
     }
@@ -68,7 +78,7 @@ export function RibbonBackground() {
         <motion.path
           d={line1Path}
           stroke="white"
-          strokeWidth="0.3"
+          strokeWidth="0.45"
           fill="none"
           opacity="0.4"
           filter="url(#softGlow)"
@@ -84,7 +94,7 @@ export function RibbonBackground() {
         <motion.path
           d={line2Path}
           stroke="white"
-          strokeWidth="0.3"
+          strokeWidth="0.45"
           fill="none"
           opacity="0.3"
           filter="url(#softGlow)"
@@ -100,7 +110,7 @@ export function RibbonBackground() {
         <motion.path
           d={line3Path}
           stroke="white"
-          strokeWidth="0.3"
+          strokeWidth="0.45"
           fill="none"
           opacity="0.35"
           filter="url(#softGlow)"

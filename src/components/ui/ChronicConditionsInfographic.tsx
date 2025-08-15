@@ -8,15 +8,14 @@ interface ChronicConditionsInfographicProps {
 
 export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInfographicProps) {
   const conditions = [
-    { name: "ARTHRITIS", color: "#004146", x: 120, y: 80 },
-    { name: "ASTHMA", color: "#C5D3C6", x: 250, y: 60 },
-    { name: "BACK PAIN", color: "#89AC8F", x: 380, y: 90 },
-    { name: "CANCER", color: "#004146", x: 150, y: 180 },
-    { name: "HEART DISEASE", color: "#C5D3C6", x: 320, y: 160 },
+    { name: "ARTHRITIS", color: "#004146", x: 120, y: 100 },
+    { name: "ASTHMA", color: "#C5D3C6", x: 280, y: 80 },
+    { name: "BACK PAIN", color: "#89AC8F", x: 420, y: 120 },
+    { name: "CANCER", color: "#004146", x: 140, y: 200 },
+    { name: "HEART DISEASE", color: "#C5D3C6", x: 350, y: 180 },
     { name: "LUNG DISEASE", color: "#89AC8F", x: 200, y: 280 },
-    { name: "DIABETES", color: "#004146", x: 350, y: 270 },
-    { name: "MENTAL HEALTH", color: "#C5D3C6", x: 80, y: 220 },
-    { name: "OBESITY", color: "#89AC8F", x: 420, y: 200 },
+    { name: "DIABETES", color: "#004146", x: 380, y: 260 },
+    { name: "MENTAL HEALTH", color: "#C5D3C6", x: 80, y: 240 },
   ];
 
   return (
@@ -47,9 +46,9 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
               <motion.circle
                 cx={condition.x}
                 cy={condition.y}
-                r="60"
+                r="65"
                 fill={condition.color}
-                opacity="0.8"
+                opacity="0.75"
                 stroke="white"
                 strokeWidth="2"
                 initial={{ 
@@ -57,20 +56,20 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
                 }}
                 animate={isVisible ? {
                   scale: 1,
-                  x: [0, Math.sin(index * 2) * 10, 0],
-                  y: [0, Math.cos(index * 1.5) * 8, 0]
+                  x: [0, Math.sin(index * 2) * 25, Math.cos(index * 3) * 20, 0],
+                  y: [0, Math.cos(index * 1.5) * 20, Math.sin(index * 2.5) * 18, 0]
                 } : {
                   scale: 0
                 }}
                 transition={{
                   scale: { duration: 0.8, delay: 0.6 + index * 0.1 },
                   x: { 
-                    duration: 4 + index * 0.3, 
+                    duration: 6 + index * 0.5, 
                     repeat: Infinity, 
                     ease: "easeInOut"
                   },
                   y: { 
-                    duration: 3.5 + index * 0.4, 
+                    duration: 5 + index * 0.6, 
                     repeat: Infinity, 
                     ease: "easeInOut"
                   }
@@ -90,20 +89,20 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
                 initial={{ opacity: 0 }}
                 animate={isVisible ? { 
                   opacity: 1,
-                  x: [0, Math.sin(index * 2) * 10, 0],
-                  y: [0, Math.cos(index * 1.5) * 8, 0]
+                  x: [0, Math.sin(index * 2) * 25, Math.cos(index * 3) * 20, 0],
+                  y: [0, Math.cos(index * 1.5) * 20, Math.sin(index * 2.5) * 18, 0]
                 } : { 
                   opacity: 0
                 }}
                 transition={{
                   opacity: { duration: 0.6, delay: 1.0 + index * 0.1 },
                   x: { 
-                    duration: 4 + index * 0.3, 
+                    duration: 6 + index * 0.5, 
                     repeat: Infinity, 
                     ease: "easeInOut"
                   },
                   y: { 
-                    duration: 3.5 + index * 0.4, 
+                    duration: 5 + index * 0.6, 
                     repeat: Infinity, 
                     ease: "easeInOut"
                   }
