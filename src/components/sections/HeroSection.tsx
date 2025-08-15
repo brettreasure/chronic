@@ -11,8 +11,8 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-headline font-bold text-primary dark:text-primary-dark mb-8">
-            The 90 Study
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-headline font-bold text-[#004146] mb-8">
+            The 90% Study
           </h1>
           
           <div className="max-w-3xl mx-auto space-y-6 text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-body leading-relaxed">
