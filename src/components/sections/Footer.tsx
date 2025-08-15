@@ -1,8 +1,8 @@
 export function Footer() {
   return (
-    <footer className="bg-[#F7F5EF] py-12">
+    <footer className="bg-[#F7F5EF] py-12 relative z-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl font-headline font-bold mb-6 text-black">
+        <h2 className="text-3xl font-headline font-bold mb-6 text-[#004146]">
           Got time to talk?
         </h2>
         <p className="text-lg font-body mb-8 text-black max-w-2xl mx-auto">
