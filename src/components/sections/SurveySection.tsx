@@ -6,6 +6,7 @@ import { TextBox } from '@/components/ui/TextBox';
 import { HorizontalBarChart } from '@/components/charts/HorizontalBarChart';
 import { VerticalBarChart } from '@/components/charts/VerticalBarChart';
 import { CircularProgress } from '@/components/ui/CircularProgress';
+import { ChronicConditionsInfographic } from '@/components/ui/ChronicConditionsInfographic';
 import { surveyData } from '@/data/surveyData';
 
 export function SurveySection() {
@@ -113,6 +114,20 @@ export function SurveySection() {
                     </div>
                   ) : (
                     <>
+                      {/* Add infographic above 95% recommendation (index 4) */}
+                      {index === 4 && (
+                        <motion.div
+                          className="mb-16"
+                          initial={{ opacity: 0, y: 30 }}
+                          animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                          transition={{ duration: 0.8, delay: 0.2 }}
+                        >
+                          <ChronicConditionsInfographic 
+                            isVisible={visibleItems.has(index)}
+                          />
+                        </motion.div>
+                      )}
+                      
                       <TextBox
                         heading={item.heading}
                         text={item.text}
