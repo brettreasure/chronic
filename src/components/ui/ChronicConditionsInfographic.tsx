@@ -67,10 +67,10 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
     { 
       name: "MENTAL HEALTH", 
       color: "#C5D3C6", 
-      x: 80, 
-      y: 240,
+      x: 250, 
+      y: 200,
       movementRange: 80,
-      duration: 12
+      duration: 8
     },
   ];
 
@@ -112,10 +112,10 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
                 }}
                 animate={isVisible ? 
                   condition.name === "MENTAL HEALTH" ? {
-                    // MENTAL HEALTH: Migrate all around the screen
+                    // MENTAL HEALTH: Migrate across full infographic width
                     scale: 1,
-                    x: [0, 60, -40, 70, -30, 50, -60, 0],
-                    y: [0, -50, 40, 30, -40, 60, -20, 0]
+                    x: [0, 80, -60, 100, -80, 70, -90, 0],
+                    y: [0, -40, 50, -30, 40, -60, 30, 0]
                   } : {
                     // Other conditions: Individual movement patterns
                     scale: 1,
@@ -167,8 +167,8 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
                   condition.name === "MENTAL HEALTH" ? {
                     // MENTAL HEALTH: Same migration pattern as circle
                     opacity: 1,
-                    x: [0, 60, -40, 70, -30, 50, -60, 0],
-                    y: [0, -50, 40, 30, -40, 60, -20, 0]
+                    x: [0, 80, -60, 100, -80, 70, -90, 0],
+                    y: [0, -40, 50, -30, 40, -60, 30, 0]
                   } : {
                     // Other conditions: Match their circle movement
                     opacity: 1,
