@@ -70,7 +70,7 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
       x: 250, 
       y: 200,
       movementRange: 80,
-      duration: 8
+      duration: 10
     },
   ];
 
