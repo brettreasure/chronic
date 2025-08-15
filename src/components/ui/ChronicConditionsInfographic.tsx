@@ -8,14 +8,70 @@ interface ChronicConditionsInfographicProps {
 
 export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInfographicProps) {
   const conditions = [
-    { name: "ARTHRITIS", color: "#004146", x: 120, y: 100 },
-    { name: "ASTHMA", color: "#C5D3C6", x: 280, y: 80 },
-    { name: "BACK PAIN", color: "#89AC8F", x: 420, y: 120 },
-    { name: "CANCER", color: "#004146", x: 140, y: 200 },
-    { name: "HEART DISEASE", color: "#C5D3C6", x: 350, y: 180 },
-    { name: "LUNG DISEASE", color: "#89AC8F", x: 200, y: 280 },
-    { name: "DIABETES", color: "#004146", x: 380, y: 260 },
-    { name: "MENTAL HEALTH", color: "#C5D3C6", x: 80, y: 240 },
+    { 
+      name: "ARTHRITIS", 
+      color: "#004146", 
+      x: 120, 
+      y: 100,
+      movementRange: 35,
+      duration: 7
+    },
+    { 
+      name: "ASTHMA", 
+      color: "#C5D3C6", 
+      x: 280, 
+      y: 80,
+      movementRange: 40,
+      duration: 6
+    },
+    { 
+      name: "BACK PAIN", 
+      color: "#89AC8F", 
+      x: 420, 
+      y: 120,
+      movementRange: 30,
+      duration: 8
+    },
+    { 
+      name: "CANCER", 
+      color: "#004146", 
+      x: 140, 
+      y: 200,
+      movementRange: 45,
+      duration: 9
+    },
+    { 
+      name: "HEART DISEASE", 
+      color: "#C5D3C6", 
+      x: 350, 
+      y: 180,
+      movementRange: 38,
+      duration: 7.5
+    },
+    { 
+      name: "LUNG DISEASE", 
+      color: "#89AC8F", 
+      x: 200, 
+      y: 280,
+      movementRange: 42,
+      duration: 6.5
+    },
+    { 
+      name: "DIABETES", 
+      color: "#004146", 
+      x: 380, 
+      y: 260,
+      movementRange: 35,
+      duration: 8.5
+    },
+    { 
+      name: "MENTAL HEALTH", 
+      color: "#C5D3C6", 
+      x: 80, 
+      y: 240,
+      movementRange: 80,
+      duration: 12
+    },
   ];
 
   return (
@@ -48,28 +104,48 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
                 cy={condition.y}
                 r="65"
                 fill={condition.color}
-                opacity="0.75"
+                opacity="0.7"
                 stroke="white"
                 strokeWidth="2"
                 initial={{ 
                   scale: 0
                 }}
-                animate={isVisible ? {
-                  scale: 1,
-                  x: [0, Math.sin(index * 2) * 25, Math.cos(index * 3) * 20, 0],
-                  y: [0, Math.cos(index * 1.5) * 20, Math.sin(index * 2.5) * 18, 0]
-                } : {
-                  scale: 0
-                }}
+                animate={isVisible ? 
+                  condition.name === "MENTAL HEALTH" ? {
+                    // MENTAL HEALTH: Migrate all around the screen
+                    scale: 1,
+                    x: [0, 60, -40, 70, -30, 50, -60, 0],
+                    y: [0, -50, 40, 30, -40, 60, -20, 0]
+                  } : {
+                    // Other conditions: Individual movement patterns
+                    scale: 1,
+                    x: [
+                      0, 
+                      Math.sin(index * 2) * condition.movementRange, 
+                      Math.cos(index * 3) * condition.movementRange * 0.8,
+                      Math.sin(index * 4) * condition.movementRange * 0.6,
+                      0
+                    ],
+                    y: [
+                      0, 
+                      Math.cos(index * 1.5) * condition.movementRange * 0.9, 
+                      Math.sin(index * 2.5) * condition.movementRange * 0.7,
+                      Math.cos(index * 3.5) * condition.movementRange * 0.5,
+                      0
+                    ]
+                  } : {
+                    scale: 0
+                  }
+                }
                 transition={{
                   scale: { duration: 0.8, delay: 0.6 + index * 0.1 },
                   x: { 
-                    duration: 6 + index * 0.5, 
+                    duration: condition.duration, 
                     repeat: Infinity, 
                     ease: "easeInOut"
                   },
                   y: { 
-                    duration: 5 + index * 0.6, 
+                    duration: condition.duration * 0.8, 
                     repeat: Infinity, 
                     ease: "easeInOut"
                   }
@@ -87,22 +163,42 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
                 fontWeight="bold"
                 fontFamily="Arial, sans-serif"
                 initial={{ opacity: 0 }}
-                animate={isVisible ? { 
-                  opacity: 1,
-                  x: [0, Math.sin(index * 2) * 25, Math.cos(index * 3) * 20, 0],
-                  y: [0, Math.cos(index * 1.5) * 20, Math.sin(index * 2.5) * 18, 0]
-                } : { 
-                  opacity: 0
-                }}
+                animate={isVisible ? 
+                  condition.name === "MENTAL HEALTH" ? {
+                    // MENTAL HEALTH: Same migration pattern as circle
+                    opacity: 1,
+                    x: [0, 60, -40, 70, -30, 50, -60, 0],
+                    y: [0, -50, 40, 30, -40, 60, -20, 0]
+                  } : {
+                    // Other conditions: Match their circle movement
+                    opacity: 1,
+                    x: [
+                      0, 
+                      Math.sin(index * 2) * condition.movementRange, 
+                      Math.cos(index * 3) * condition.movementRange * 0.8,
+                      Math.sin(index * 4) * condition.movementRange * 0.6,
+                      0
+                    ],
+                    y: [
+                      0, 
+                      Math.cos(index * 1.5) * condition.movementRange * 0.9, 
+                      Math.sin(index * 2.5) * condition.movementRange * 0.7,
+                      Math.cos(index * 3.5) * condition.movementRange * 0.5,
+                      0
+                    ]
+                  } : { 
+                    opacity: 0
+                  }
+                }
                 transition={{
                   opacity: { duration: 0.6, delay: 1.0 + index * 0.1 },
                   x: { 
-                    duration: 6 + index * 0.5, 
+                    duration: condition.duration, 
                     repeat: Infinity, 
                     ease: "easeInOut"
                   },
                   y: { 
-                    duration: 5 + index * 0.6, 
+                    duration: condition.duration * 0.8, 
                     repeat: Infinity, 
                     ease: "easeInOut"
                   }
