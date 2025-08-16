@@ -63,18 +63,43 @@ export function SurveySection() {
               {!item.hasGraph ? (
                 <div className="flex flex-col items-center space-y-12">
                   {index === 0 && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                      transition={{ duration: 0.8, delay: 0.2 }}
-                    >
-                      <CircularProgress
-                        percentage={84}
-                        isVisible={visibleItems.has(index)}
-                        size={200}
-                        strokeWidth={24}
-                      />
-                    </motion.div>
+                    <>
+                      <motion.div
+                        className="mb-16"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                      >
+                        <ChronicConditionsInfographic 
+                          isVisible={visibleItems.has(index)}
+                          footnote={
+                            <>
+                              <a 
+                                href="https://www.aihw.gov.au/reports/australias-health/chronic-conditions" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="underline hover:text-[#004146] transition-colors"
+                              >
+                                61% of Australians
+                              </a>
+                              {" have one chronic condition or more"}
+                            </>
+                          }
+                        />
+                      </motion.div>
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                      >
+                        <CircularProgress
+                          percentage={84}
+                          isVisible={visibleItems.has(index)}
+                          size={200}
+                          strokeWidth={24}
+                        />
+                      </motion.div>
+                    </>
                   )}
                   <motion.p
                     className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body text-center max-w-2xl leading-relaxed"
@@ -84,6 +109,16 @@ export function SurveySection() {
                   >
                     {item.text}
                   </motion.p>
+                  {item.footnote && (
+                    <motion.p
+                      className="text-sm text-gray-600 dark:text-gray-400 font-body text-center max-w-2xl leading-relaxed"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      transition={{ duration: 0.6, delay: 1.0 }}
+                    >
+                      {item.footnote}
+                    </motion.p>
+                  )}
                 </div>
               ) : (
                 <div className="w-full max-w-4xl space-y-16">
@@ -114,25 +149,12 @@ export function SurveySection() {
                     </div>
                   ) : (
                     <>
-                      {/* Add infographic above 95% recommendation (index 4) */}
-                      {index === 4 && (
-                        <motion.div
-                          className="mb-16"
-                          initial={{ opacity: 0, y: 30 }}
-                          animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-                          transition={{ duration: 0.8, delay: 0.2 }}
-                        >
-                          <ChronicConditionsInfographic 
-                            isVisible={visibleItems.has(index)}
-                          />
-                        </motion.div>
-                      )}
-                      
                       <TextBox
                         heading={item.heading}
                         text={item.text}
                         isVisible={visibleItems.has(index)}
                         variant={item.variant}
+                        footnote={item.footnote}
                       />
                       
                       {item.graph && (

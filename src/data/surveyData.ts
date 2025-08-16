@@ -4,6 +4,7 @@ export interface SurveyDataPoint {
   hasGraph: boolean;
   variant?: 'default' | 'dark-cyan' | 'double-border';
   isVerticalChart?: boolean;
+  footnote?: string;
   graph?: {
     title: string;
     data: Array<{
@@ -21,6 +22,7 @@ export const surveyData: SurveyDataPoint[] = [
     text: "84% of participants completed the program",
     hasGraph: false,
     variant: "double-border",
+    footnote: "*Prescribed exercise 'doses' weekly, for twelve weeks.",
   },
   {
     heading: "97%",
@@ -41,6 +43,7 @@ export const surveyData: SurveyDataPoint[] = [
     text: "92% found the program fairly easy\nor easy to adhere to",
     hasGraph: true,
     variant: "dark-cyan",
+    footnote: "The right dose of exercise medicine at the right time, for the right reason, has been proved more effective than some prescriptive drugs. Getting the dose right and ensuring compliance are critical parts of high health value outcomes.",
     graph: {
       title: "Difficulty",
       data: [

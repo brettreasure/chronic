@@ -7,9 +7,10 @@ interface TextBoxProps {
   text: string;
   isVisible: boolean;
   variant?: 'default' | 'dark-cyan' | 'double-border';
+  footnote?: string;
 }
 
-export function TextBox({ heading, text, isVisible, variant = 'default' }: TextBoxProps) {
+export function TextBox({ heading, text, isVisible, variant = 'default', footnote }: TextBoxProps) {
   const isDarkCyan = variant === 'dark-cyan';
   const isDoubleBorder = variant === 'double-border';
   
@@ -61,6 +62,21 @@ export function TextBox({ heading, text, isVisible, variant = 'default' }: TextB
       >
         {text}
       </motion.p>
+      
+      {footnote && (
+        <motion.p 
+          className={`text-sm font-body leading-relaxed relative z-10 mt-4 ${
+            isDarkCyan 
+              ? 'text-white/80' 
+              : 'text-gray-600 dark:text-gray-400'
+          }`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          {footnote}
+        </motion.p>
+      )}
     </motion.div>
   );
 }

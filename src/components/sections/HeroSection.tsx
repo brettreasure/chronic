@@ -25,7 +25,7 @@ export function HeroSection() {
             </p>
             
             <p className="text-primary dark:text-primary-dark font-semibold">
-              The study was conducted over three years and involved 177 participants.
+              The study was conducted over three years and involved 177 participants. Results align with our previous research, awarded an <a href="https://chroniccare.com.au/vbhc" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#004146] transition-colors">International Value-Based Health Care prize</a>.
             </p>
           </div>
 

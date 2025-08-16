@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 
 interface ChronicConditionsInfographicProps {
   isVisible: boolean;
+  footnote?: React.ReactNode;
 }
 
-export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInfographicProps) {
+export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicConditionsInfographicProps) {
   const conditions = [
     { 
       name: "ARTHRITIS", 
@@ -217,6 +218,17 @@ export function ChronicConditionsInfographic({ isVisible }: ChronicConditionsInf
           ))}
         </svg>
       </div>
+      
+      {footnote && (
+        <motion.p
+          className="text-sm text-gray-600 mt-4 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+        >
+          {footnote}
+        </motion.p>
+      )}
     </motion.div>
   );
 }
