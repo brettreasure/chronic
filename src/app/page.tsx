@@ -14,9 +14,7 @@ export default function Home() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsMedexVisible(true);
-        }
+        setIsMedexVisible(entry.isIntersecting);
       },
       {
         threshold: 0.3,
