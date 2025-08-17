@@ -22,7 +22,7 @@ export const surveyData: SurveyDataPoint[] = [
     text: "84% of participants completed the program",
     hasGraph: false,
     variant: "double-border",
-    footnote: "*Prescribed exercise 'doses' weekly, for twelve weeks.",
+    footnote: "*Attended 80% + of prescribed exercise sessions during the program.",
   },
   {
     heading: "97%",
