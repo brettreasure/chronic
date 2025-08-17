@@ -22,10 +22,11 @@ export function MedexTextBox({ isVisible }: MedexTextBoxProps) {
         scale: 0.8 
       }}
       transition={{ 
-        duration: 0.8, 
-        ease: "easeOut",
+        duration: 1.2, 
         type: "spring",
-        bounce: 0.4
+        damping: 12,
+        stiffness: 100,
+        bounce: 0.6
       }}
     >
       <motion.p 
