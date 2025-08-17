@@ -11,9 +11,22 @@ export function MedexTextBox({ isVisible }: MedexTextBoxProps) {
     <motion.div
       className="max-w-4xl mx-auto text-center rounded-lg p-8 shadow-lg"
       style={{ backgroundColor: '#4fcdc4' }}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      initial={{ opacity: 0, y: 50, scale: 0.8 }}
+      animate={isVisible ? { 
+        opacity: 1, 
+        y: 0, 
+        scale: 1 
+      } : { 
+        opacity: 0, 
+        y: 50, 
+        scale: 0.8 
+      }}
+      transition={{ 
+        duration: 0.8, 
+        ease: "easeOut",
+        type: "spring",
+        bounce: 0.4
+      }}
     >
       <motion.p 
         className="text-lg sm:text-xl font-body leading-relaxed text-white"
