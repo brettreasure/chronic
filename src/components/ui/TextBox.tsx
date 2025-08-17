@@ -74,7 +74,13 @@ export function TextBox({ heading, text, isVisible, variant = 'default', footnot
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <sup>*</sup>{footnote.substring(1)}
+          {footnote.startsWith('*') ? (
+            <>
+              <sup>*</sup>{footnote.substring(1)}
+            </>
+          ) : (
+            footnote
+          )}
         </motion.p>
       )}
     </motion.div>
