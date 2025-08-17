@@ -116,7 +116,13 @@ export function SurveySection() {
                       animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ duration: 0.6, delay: 1.0 }}
                     >
-                      {item.footnote}
+                      {item.footnote?.startsWith('*') ? (
+                        <>
+                          <sup>*</sup>{item.footnote.substring(1)}
+                        </>
+                      ) : (
+                        item.footnote
+                      )}
                     </motion.p>
                   )}
                 </div>
