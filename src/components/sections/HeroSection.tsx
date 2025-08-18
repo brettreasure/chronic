@@ -25,10 +25,6 @@ export function HeroSection() {
               <br /><br />
               Here&apos;s the proof: real world research on the benefits of a structured, 12 week exercise medicine program, using our 4 Point Medex system. Scroll down through the results to see how effective value-based exercise medicine is, in the fight against chronic illnesses.
             </p>
-            
-            <p className="text-primary dark:text-primary-dark font-semibold">
-              The study was conducted over three years and involved 177 participants. Results align with our previous research, awarded an <a href="https://chroniccare.com.au/vbhc" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#004146] transition-colors">International Value-Based Health Care prize</a>.
-            </p>
           </div>
 
           <motion.div 

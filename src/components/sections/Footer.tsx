@@ -2,6 +2,9 @@ export function Footer() {
   return (
     <footer className="bg-[#F7F5EF] py-12 relative z-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p className="text-lg font-semibold mb-8 text-black max-w-3xl mx-auto">
+          The study was conducted over three years and involved 177 participants. Results align with our previous research, awarded an <a href="https://chroniccare.com.au/vbhc" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#004146] transition-colors">International Value-Based Health Care prize</a>.
+        </p>
         <h2 className="text-3xl font-headline font-bold mb-6 text-[#004146]">
           Got time to talk?
         </h2>

@@ -35,9 +35,9 @@ export function MedexTextBox({ isVisible }: MedexTextBoxProps) {
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <span className="font-bold italic text-cyan-600">Our 4 point MEDEX dispensing system is the only clinically proven exercise medicine delivery system we know that achieves compliance rates of 84%.</span>
+        <span className="text-white">Our 4 point MEDEX dispensing system is the only clinically proven exercise medicine delivery system we know that achieves compliance rates of 84%.</span>
         <br />
-        <span className="font-bold italic text-cyan-600">It also delivers consistently high client health care value to its participants.</span>
+        <span className="text-white">It also delivers consistently high client health care value to its participants.</span>
       </motion.p>
     </motion.div>
   );

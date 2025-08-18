@@ -6,15 +6,12 @@ import { SurveySection } from "@/components/sections/SurveySection";
 import { Footer } from "@/components/sections/Footer";
 import { RibbonBackground } from "@/components/ui/RibbonBackground";
 import { MedexTextBox } from "@/components/ui/MedexTextBox";
-import { VbhcTextBox } from "@/components/ui/VbhcTextBox";
 import { NewVbhcTextBox } from "@/components/ui/NewVbhcTextBox";
 
 export default function Home() {
   const [isMedexVisible, setIsMedexVisible] = useState(false);
-  const [isVbhcVisible, setIsVbhcVisible] = useState(false);
   const [isNewVbhcVisible, setIsNewVbhcVisible] = useState(false);
   const medexRef = useRef<HTMLDivElement>(null);
-  const vbhcRef = useRef<HTMLDivElement>(null);
   const newVbhcRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,8 +20,6 @@ export default function Home() {
         entries.forEach((entry) => {
           if (entry.target === medexRef.current) {
             setIsMedexVisible(entry.isIntersecting);
-          } else if (entry.target === vbhcRef.current) {
-            setIsVbhcVisible(entry.isIntersecting);
           } else if (entry.target === newVbhcRef.current) {
             setIsNewVbhcVisible(entry.isIntersecting);
           }
@@ -38,9 +33,6 @@ export default function Home() {
 
     if (medexRef.current) {
       observer.observe(medexRef.current);
-    }
-    if (vbhcRef.current) {
-      observer.observe(vbhcRef.current);
     }
     if (newVbhcRef.current) {
       observer.observe(newVbhcRef.current);
@@ -58,11 +50,6 @@ export default function Home() {
         <HeroSection />
         <SurveySection />
       </main>
-      <section ref={vbhcRef} className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="container mx-auto">
-          <VbhcTextBox isVisible={isVbhcVisible} />
-        </div>
-      </section>
       <section ref={newVbhcRef} className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="container mx-auto">
           <NewVbhcTextBox isVisible={isNewVbhcVisible} />
