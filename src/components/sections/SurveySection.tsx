@@ -7,26 +7,33 @@ import { HorizontalBarChart } from '@/components/charts/HorizontalBarChart';
 import { VerticalBarChart } from '@/components/charts/VerticalBarChart';
 import { CircularProgress } from '@/components/ui/CircularProgress';
 import { ChronicConditionsInfographic } from '@/components/ui/ChronicConditionsInfographic';
+import { BenefitsInfographic } from '@/components/ui/BenefitsInfographic';
 import { surveyData } from '@/data/surveyData';
 
 export function SurveySection() {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
+  const [isBenefitsVisible, setIsBenefitsVisible] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const benefitsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          const index = parseInt(entry.target.getAttribute('data-index') || '0');
-          if (entry.isIntersecting) {
-            setVisibleItems(prev => new Set([...prev, index]));
+          if (entry.target === benefitsRef.current) {
+            setIsBenefitsVisible(entry.isIntersecting);
           } else {
-            setVisibleItems(prev => {
-              const newSet = new Set([...prev]);
-              newSet.delete(index);
-              return newSet;
-            });
+            const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            if (entry.isIntersecting) {
+              setVisibleItems(prev => new Set([...prev, index]));
+            } else {
+              setVisibleItems(prev => {
+                const newSet = new Set([...prev]);
+                newSet.delete(index);
+                return newSet;
+              });
+            }
           }
         });
       },
@@ -41,6 +48,10 @@ export function SurveySection() {
         observerRef.current?.observe(ref);
       }
     });
+
+    if (benefitsRef.current) {
+      observerRef.current?.observe(benefitsRef.current);
+    }
 
     return () => {
       observerRef.current?.disconnect();
@@ -183,6 +194,23 @@ export function SurveySection() {
             </div>
           </div>
         ))}
+        
+        {/* Benefits Infographic Section */}
+        <div
+          ref={benefitsRef}
+          className="mb-32 last:mb-16"
+        >
+          <div className="min-h-screen flex items-center justify-center">
+            <motion.div
+              className="w-full max-w-4xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isBenefitsVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <BenefitsInfographic isVisible={isBenefitsVisible} />
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
