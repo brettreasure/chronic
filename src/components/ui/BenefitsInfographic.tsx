@@ -56,6 +56,14 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
       y: 280,
       movementRange: 42,
       duration: 6.5
+    },
+    { 
+      name: "VITALITY", 
+      color: "#E74C3C", // Red
+      x: 380, 
+      y: 260,
+      movementRange: 35,
+      duration: 8.5
     }
   ];
 
