@@ -17,11 +17,11 @@ export function HeroSection() {
           
           <div className="max-w-3xl mx-auto space-y-6 text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-body leading-relaxed">
             <p>
-              Here&apos;s some real world research on the benefits of a structured, 12 week exercise medicine program 
-              by qualified exercise physiologists. Chronic Care Australia applies Values Based Health Care 
-              principles, delivering Exercise As Medicine programs that add significant value to quality of life 
-              for Australians living with varied Chronic diseases. Scroll down through the results to see how 
-              effective value-based exercise medicine is, in the fight against chronic illnesses.
+              <em>We know that exercise works as medicine. Now we have a system that gets people motivated.</em>
+              <br />
+              - <em>Katie Stewart, Co-founder.</em>
+              <br /><br />
+              Here&apos;s the proof: real world research on the benefits of a structured, 12 week exercise medicine program, using our 4 Point Medex system. Scroll down through the results to see how effective value-based exercise medicine is, in the fight against chronic illnesses.
             </p>
             
             <p className="text-primary dark:text-primary-dark font-semibold">
