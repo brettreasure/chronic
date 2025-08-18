@@ -17,9 +17,11 @@ export function HeroSection() {
           
           <div className="max-w-3xl mx-auto space-y-6 text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-body leading-relaxed">
             <p>
-              <em>We know that exercise works as medicine. Now we have a system that gets people motivated.</em>
+              <strong className="text-[#4fcdc4] italic">We know that exercise works as medicine.</strong>
               <br />
-              - <em>Katie Stewart, Co-founder.</em>
+              <strong className="text-[#4fcdc4] italic">Now we have a system that gets people motivated.</strong>
+              <br />
+              - <strong className="text-[#4fcdc4]">Katie Stewart, Co-founder.</strong>
               <br /><br />
               Here&apos;s the proof: real world research on the benefits of a structured, 12 week exercise medicine program, using our 4 Point Medex system. Scroll down through the results to see how effective value-based exercise medicine is, in the fight against chronic illnesses.
             </p>

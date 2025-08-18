@@ -2,15 +2,15 @@
 
 import { motion } from 'framer-motion';
 
-interface MedexTextBoxProps {
+interface NewVbhcTextBoxProps {
   isVisible: boolean;
 }
 
-export function MedexTextBox({ isVisible }: MedexTextBoxProps) {
+export function NewVbhcTextBox({ isVisible }: NewVbhcTextBoxProps) {
   return (
     <motion.div
-      className="max-w-4xl mx-auto text-center rounded-lg p-8 shadow-lg"
-      style={{ backgroundColor: '#4fcdc4' }}
+      className="w-2/3 max-w-2xl mx-auto text-center rounded-lg p-8 shadow-lg text-white"
+      style={{ backgroundColor: '#004146' }}
       initial={{ opacity: 0, y: 50, scale: 0.8 }}
       animate={isVisible ? { 
         opacity: 1, 
@@ -30,14 +30,12 @@ export function MedexTextBox({ isVisible }: MedexTextBoxProps) {
       }}
     >
       <motion.p 
-        className="text-lg sm:text-xl font-body leading-relaxed text-white"
+        className="text-lg sm:text-xl font-body leading-relaxed"
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <span className="font-bold italic text-cyan-600">Our 4 point MEDEX dispensing system is the only clinically proven exercise medicine delivery system we know that achieves compliance rates of 84%.</span>
-        <br />
-        <span className="font-bold italic text-cyan-600">It also delivers consistently high client health care value to its participants.</span>
+        Chronic Care Australia applies Values Based Health Care principles, delivering Exercise As Medicine programs that add significant value to quality of life for Australians living with varied Chronic diseases.
       </motion.p>
     </motion.div>
   );
