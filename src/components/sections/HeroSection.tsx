@@ -19,7 +19,7 @@ export function HeroSection() {
             <p>
               <strong className="text-[#4fcdc4] italic">We know that exercise works as medicine.</strong>
               <br />
-              <strong className="text-[#4fcdc4] italic">Now we have a system that gets people motivated.</strong>
+              <strong className="text-[#4fcdc4] italic">Now we have a system that motivates people to exercise.</strong>
               <br />
               - Katie Stewart, Co-founder
               <br /><br />
