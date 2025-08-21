@@ -35,7 +35,7 @@ export function NewVbhcTextBox({ isVisible }: NewVbhcTextBoxProps) {
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Chronic Care Australia applies Values Based Health Care principles, delivering Exercise As Medicine programs that add significant value to quality of life for Australians living with varied Chronic diseases.
+        Chronic Care Australia applies Value-Based Healthcare principles, delivering Exercise As Medicine programs that add significant value to quality of life for Australians living with varied chronic diseases.
       </motion.p>
     </motion.div>
   );

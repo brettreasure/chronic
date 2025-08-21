@@ -19,6 +19,15 @@
   font-display: swap;
 }
 
+/* Force font application */
+.font-headline {
+  font-family: 'Orpheus Pro', serif !important;
+}
+
+.font-body {
+  font-family: 'Futura PT Book', sans-serif !important;
+}
+
 :root {
   --background-light: #F7F5EF;
   --background-dark: #1a1a1a;

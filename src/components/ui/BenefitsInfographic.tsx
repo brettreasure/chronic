@@ -11,7 +11,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
   const benefits = [
     { 
       name: "BONE DENSITY", 
-      color: "#D2691E", // Chocolate orange
+      color: "#F0AC6F", // Chocolate orange
       x: 120, 
       y: 100,
       movementRange: 35,
@@ -19,7 +19,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
     },
     { 
       name: "MUSCLE MASS", 
-      color: "#FF6B35", // Bright orange
+      color: "#E1865A", // Bright orange
       x: 280, 
       y: 80,
       movementRange: 40,
@@ -27,7 +27,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
     },
     { 
       name: "CARDIO CAPACITY", 
-      color: "#E74C3C", // Red
+      color: "#E378A3", // Red
       x: 420, 
       y: 120,
       movementRange: 30,
@@ -59,7 +59,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
     },
     { 
       name: "VITALITY", 
-      color: "#E74C3C", // Red
+      color: "#E378A3", // Red
       x: 380, 
       y: 260,
       movementRange: 35,
@@ -69,13 +69,13 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
 
   return (
     <motion.div
-      className="w-full bg-[#F7F5EF] rounded-xl p-8 shadow-2xl shadow-gray-500/20"
+      className="w-full bg-[#EDE1D0] rounded-xl p-8 shadow-2xl shadow-gray-500/20"
       initial={{ opacity: 0, y: 30 }}
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
       <motion.h2
-        className="text-3xl font-headline font-bold text-[#004146] text-center mb-8"
+        className="text-3xl font-headline font-bold text-black text-center mb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}

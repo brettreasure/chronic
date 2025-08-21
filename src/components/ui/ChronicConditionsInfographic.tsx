@@ -11,7 +11,7 @@ export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicCon
   const conditions = [
     { 
       name: "ARTHRITIS", 
-      color: "#004146", 
+      color: "#00625D", 
       x: 120, 
       y: 100,
       movementRange: 35,
@@ -19,7 +19,7 @@ export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicCon
     },
     { 
       name: "ASTHMA", 
-      color: "#C5D3C6", 
+      color: "#A6B6B4", 
       x: 280, 
       y: 80,
       movementRange: 40,
@@ -27,7 +27,7 @@ export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicCon
     },
     { 
       name: "BACK PAIN", 
-      color: "#89AC8F", 
+      color: "#7DBF90", 
       x: 420, 
       y: 120,
       movementRange: 30,
@@ -35,7 +35,7 @@ export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicCon
     },
     { 
       name: "CANCER", 
-      color: "#004146", 
+      color: "#00625D", 
       x: 140, 
       y: 200,
       movementRange: 45,
@@ -43,7 +43,7 @@ export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicCon
     },
     { 
       name: "HEART DISEASE", 
-      color: "#C5D3C6", 
+      color: "#A6B6B4", 
       x: 350, 
       y: 180,
       movementRange: 38,
@@ -51,7 +51,7 @@ export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicCon
     },
     { 
       name: "LUNG DISEASE", 
-      color: "#89AC8F", 
+      color: "#7DBF90", 
       x: 200, 
       y: 280,
       movementRange: 42,
@@ -59,7 +59,7 @@ export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicCon
     },
     { 
       name: "DIABETES", 
-      color: "#004146", 
+      color: "#00625D", 
       x: 380, 
       y: 260,
       movementRange: 35,
@@ -67,7 +67,7 @@ export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicCon
     },
     { 
       name: "MENTAL HEALTH", 
-      color: "#C5D3C6", 
+      color: "#A6B6B4", 
       x: 250, 
       y: 200,
       movementRange: 80,
@@ -77,13 +77,13 @@ export function ChronicConditionsInfographic({ isVisible, footnote }: ChronicCon
 
   return (
     <motion.div
-      className="w-full bg-[#F7F5EF] rounded-xl p-8 shadow-2xl shadow-gray-500/20"
+      className="w-full bg-[#EDE1D0] rounded-xl p-8 shadow-2xl shadow-gray-500/20"
       initial={{ opacity: 0, y: 30 }}
       animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.8, delay: 0.2 }}
     >
       <motion.h2
-        className="text-3xl font-headline font-bold text-[#004146] text-center mb-8"
+        className="text-3xl font-headline font-bold text-[#00625D] text-center mb-8"
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
