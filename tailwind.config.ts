@@ -24,9 +24,9 @@ export default {
         },
       },
       fontFamily: {
-        'headline': ['var(--font-inter)', 'Inter', 'sans-serif'],
-        'body': ['var(--font-inter)', 'Inter', 'sans-serif'],
-        'sans': ['var(--font-inter)', 'Inter', 'sans-serif'],
+        'headline': ['Orpheus Pro', 'serif'],
+        'body': ['Futura PT Book', 'sans-serif'],
+        'sans': ['Futura PT Book', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

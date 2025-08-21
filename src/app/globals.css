@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+/* Custom Fonts */
+@font-face {
+  font-family: 'Futura PT Book';
+  src: url('/fonts/13a7a4a64f0a4b39a872e732c91d2375.woff2') format('woff2'),
+       url('/fonts/13a7a4a64f0a4b39a872e732c91d2375.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Orpheus Pro';
+  src: url('/fonts/2aea0ac500c896188f9ad191c231029c.woff2') format('woff2'),
+       url('/fonts/2aea0ac500c896188f9ad191c231029c.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background-light: #F7F5EF;
   --background-dark: #1a1a1a;
@@ -15,7 +34,6 @@ html {
 body {
   background: var(--background-light);
   color: var(--foreground-light);
-  font-family: var(--font-inter);
   line-height: 1.6;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
