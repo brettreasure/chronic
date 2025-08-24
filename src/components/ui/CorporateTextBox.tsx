@@ -1,0 +1,65 @@
+"use client";
+
+import { motion } from 'framer-motion';
+
+interface CorporateTextBoxProps {
+  heading: string;
+  text: string;
+  isVisible: boolean;
+  variant?: 'default' | 'dark-cyan' | 'double-border';
+}
+
+export function CorporateTextBox({ heading, text, isVisible, variant = 'default' }: CorporateTextBoxProps) {
+  const isDarkCyan = variant === 'dark-cyan';
+  const isDoubleBorder = variant === 'double-border';
+  
+  return (
+    <motion.div
+      className={`max-w-2xl mx-auto text-center rounded-lg p-8 shadow-lg relative ${
+        isDarkCyan 
+          ? 'bg-[#004146] border border-[#004146]/20' 
+          : isDoubleBorder
+          ? 'bg-white dark:bg-gray-800'
+          : 'bg-white dark:bg-gray-800 border border-primary/10'
+      }`}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      {/* Double border effect for first text box */}
+      {isDoubleBorder && (
+        <>
+          {/* Outer border */}
+          <div className="absolute inset-0 rounded-lg border-2 border-[#004146]" />
+          {/* Inner border with gap */}
+          <div className="absolute inset-2 rounded-md border-2 border-[#004146]" />
+        </>
+      )}
+      
+      <motion.h2 
+        className={`text-6xl sm:text-7xl font-headline font-bold mb-4 relative z-10 ${
+          isDarkCyan 
+            ? 'text-white' 
+            : 'text-primary dark:text-primary-dark'
+        }`}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        {heading}
+      </motion.h2>
+      
+      <motion.div 
+        className={`text-xl sm:text-2xl font-body leading-relaxed relative z-10 ${
+          isDarkCyan 
+            ? 'text-white' 
+            : 'text-gray-700 dark:text-gray-300'
+        }`}
+        initial={{ opacity: 0, y: 20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        dangerouslySetInnerHTML={{ __html: text }}
+      />
+    </motion.div>
+  );
+}
