@@ -10,7 +10,7 @@ interface BenefitsInfographicProps {
 export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographicProps) {
   const benefits = [
     { 
-      name: "BONE DENSITY", 
+      name: "LESS ABSENTEEISM", 
       color: "#F0AC6F", // Chocolate orange
       x: 120, 
       y: 100,
@@ -18,7 +18,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
       duration: 7
     },
     { 
-      name: "MUSCLE MASS", 
+      name: "MORE JOB SATISFACTION", 
       color: "#E1865A", // Bright orange
       x: 280, 
       y: 80,
@@ -26,7 +26,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
       duration: 6
     },
     { 
-      name: "CARDIO CAPACITY", 
+      name: "TEAMWORK", 
       color: "#E378A3", // Red
       x: 420, 
       y: 120,
@@ -34,7 +34,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
       duration: 8
     },
     { 
-      name: "BLOOD PRESSURE", 
+      name: "BREAKS DOWN SILOS", 
       color: "#CD853F", // Peru/sandy brown
       x: 140, 
       y: 200,
@@ -42,28 +42,12 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
       duration: 9
     },
     { 
-      name: "MENTAL HEALTH", 
+      name: "ATTRACTS NEW TALENT", 
       color: "#FF8C42", // Orange peel
       x: 350, 
       y: 180,
       movementRange: 80,
       duration: 20
-    },
-    { 
-      name: "WEIGHT LOSS", 
-      color: "#FF7F50", // Coral
-      x: 250, 
-      y: 280,
-      movementRange: 42,
-      duration: 6.5
-    },
-    { 
-      name: "VITALITY", 
-      color: "#E378A3", // Red
-      x: 380, 
-      y: 260,
-      movementRange: 35,
-      duration: 8.5
     }
   ];
 
@@ -80,7 +64,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        BENEFITS
+        BUSINESS BENEFITS
       </motion.h2>
       
       <div className="relative w-full h-80 overflow-hidden">
@@ -95,7 +79,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
               <motion.circle
                 cx={benefit.x}
                 cy={benefit.y}
-                r="65"
+                r="81"
                 fill={benefit.color}
                 opacity="0.7"
                 stroke="white"
@@ -104,7 +88,7 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
                   scale: 0
                 }}
                 animate={isVisible ? 
-                  benefit.name === "MENTAL HEALTH" ? {
+                  benefit.name === "ATTRACTS NEW TALENT" ? {
                     // MENTAL HEALTH: Migrate across full infographic width
                     scale: 1,
                     x: [0, 80, -60, 100, -80, 70, -90, 0],
@@ -152,12 +136,12 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
                 textAnchor="middle"
                 dominantBaseline="middle"
                 fill="white"
-                fontSize="11"
+                fontSize="10"
                 fontWeight="bold"
                 fontFamily="Arial, sans-serif"
                 initial={{ opacity: 0 }}
                 animate={isVisible ? 
-                  benefit.name === "MENTAL HEALTH" ? {
+                  benefit.name === "ATTRACTS NEW TALENT" ? {
                     // MENTAL HEALTH: Same migration pattern as circle
                     opacity: 1,
                     x: [0, 80, -60, 100, -80, 70, -90, 0],
@@ -197,14 +181,30 @@ export function BenefitsInfographic({ isVisible, footnote }: BenefitsInfographic
                   }
                 }}
               >
-                {benefit.name.length > 8 ? (
-                  <>
-                    <tspan x={benefit.x} dy="-6">{benefit.name.split(' ')[0]}</tspan>
-                    <tspan x={benefit.x} dy="12">{benefit.name.split(' ')[1] || ''}</tspan>
-                  </>
-                ) : (
-                  benefit.name
-                )}
+                {(() => {
+                  const words = benefit.name.split(' ');
+                  if (words.length >= 3) {
+                    // 3 lines for phrases like "MORE JOB SATISFACTION", "BREAKS DOWN SILOS", "ATTRACTS NEW TALENT"
+                    return (
+                      <>
+                        <tspan x={benefit.x} dy="-10">{words[0]}</tspan>
+                        <tspan x={benefit.x} dy="10">{words[1]}</tspan>
+                        <tspan x={benefit.x} dy="10">{words.slice(2).join(' ')}</tspan>
+                      </>
+                    );
+                  } else if (words.length === 2) {
+                    // 2 lines for phrases like "LESS ABSENTEEISM"
+                    return (
+                      <>
+                        <tspan x={benefit.x} dy="-5">{words[0]}</tspan>
+                        <tspan x={benefit.x} dy="10">{words[1]}</tspan>
+                      </>
+                    );
+                  } else {
+                    // Single line for "TEAMWORK"
+                    return benefit.name;
+                  }
+                })()}
               </motion.text>
             </motion.g>
           ))}

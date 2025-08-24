@@ -50,7 +50,7 @@ export function CorporateTextBox({ heading, text, isVisible, variant = 'default'
       </motion.h2>
       
       <motion.div 
-        className={`text-xl sm:text-2xl font-body leading-relaxed relative z-10 ${
+        className={`text-xl sm:text-2xl font-body leading-relaxed relative z-10 space-y-4 ${
           isDarkCyan 
             ? 'text-white' 
             : 'text-gray-700 dark:text-gray-300'
@@ -58,8 +58,34 @@ export function CorporateTextBox({ heading, text, isVisible, variant = 'default'
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        dangerouslySetInnerHTML={{ __html: text }}
-      />
+      >
+        <p>
+          $82 billion annually: cost to the Australian economy of chronic conditions (more than we spend on defence)
+          <sup>
+            <a 
+              href="https://www.aihw.gov.au/reports/health-welfare-expenditure/health-system-spending-on-disease-and-injury-aus/contents/summary" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-[#004146] transition-colors"
+            >
+              1
+            </a>
+          </sup>
+        </p>
+        <p>
+          Annual productivity losses to business: $32B
+          <sup>
+            <a 
+              href="https://www.medibank.com.au/content/dam/client/documents/pdfs/The_health_of_Australia's_workforce.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-[#004146] transition-colors"
+            >
+              2
+            </a>
+          </sup>
+        </p>
+      </motion.div>
     </motion.div>
   );
 }

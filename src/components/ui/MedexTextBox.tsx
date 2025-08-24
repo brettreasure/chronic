@@ -29,16 +29,19 @@ export function MedexTextBox({ isVisible }: MedexTextBoxProps) {
         bounce: 0.6
       }}
     >
-      <motion.p 
+      <motion.div 
         className="text-lg sm:text-xl font-body leading-relaxed text-white"
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <span className="text-white">Our 4 point MEDEX dispensing system is the only clinically proven exercise medicine delivery system we know that achieves compliance rates of 84%.</span>
-        <br />
-        <span className="text-white">It also delivers consistently high client health care value to its participants.</span>
-      </motion.p>
+        <p className="text-white mb-4">
+          "Structured exercise programs reliably elevate perceived self‑efficacy alongside psychological well‑being. In other words, completing a program makes people more confident."
+        </p>
+        <p className="text-white">
+          - Katie Stewart, Co-founder
+        </p>
+      </motion.div>
     </motion.div>
   );
 }

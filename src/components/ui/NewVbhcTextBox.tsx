@@ -29,13 +29,21 @@ export function NewVbhcTextBox({ isVisible }: NewVbhcTextBoxProps) {
         bounce: 0.6
       }}
     >
-      <motion.p 
-        className="text-lg sm:text-xl font-body leading-relaxed"
+      <motion.h2 
+        className="text-2xl sm:text-3xl font-headline font-bold mb-4"
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Chronic Care Australia applies Value-Based Healthcare principles, delivering Exercise As Medicine programs that add significant value to quality of life for Australians living with varied chronic diseases.
+        Exercise As Medicine
+      </motion.h2>
+      <motion.p 
+        className="text-lg sm:text-xl font-body leading-relaxed"
+        initial={{ opacity: 0, y: 20 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        Exercise has been shown to be as effective as pharmacological treatments but addresses multiple chronic conditions at once. Exercise is accessible, low-cost and within the control of the individual.
       </motion.p>
     </motion.div>
   );
