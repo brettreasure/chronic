@@ -109,7 +109,6 @@ export function CorporateSurveySection() {
                         >
                           <CorporateTextBox
                             heading="$82B"
-                            text=""
                             isVisible={visibleItems.has(index)}
                             variant="dark-cyan"
                           />

@@ -36,7 +36,7 @@ export function MedexTextBox({ isVisible }: MedexTextBoxProps) {
         transition={{ duration: 0.6, delay: 0.2 }}
       >
         <p className="text-white mb-4">
-          "Structured exercise programs reliably elevate perceived self‑efficacy alongside psychological well‑being. In other words, completing a program makes people more confident."
+          &ldquo;Structured exercise programs reliably elevate perceived self‑efficacy alongside psychological well‑being. In other words, completing a program makes people more confident.&rdquo;
         </p>
         <p className="text-white">
           - Katie Stewart, Co-founder

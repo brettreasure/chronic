@@ -4,12 +4,11 @@ import { motion } from 'framer-motion';
 
 interface CorporateTextBoxProps {
   heading: string;
-  text: string;
   isVisible: boolean;
   variant?: 'default' | 'dark-cyan' | 'double-border';
 }
 
-export function CorporateTextBox({ heading, text, isVisible, variant = 'default' }: CorporateTextBoxProps) {
+export function CorporateTextBox({ heading, isVisible, variant = 'default' }: CorporateTextBoxProps) {
   const isDarkCyan = variant === 'dark-cyan';
   const isDoubleBorder = variant === 'double-border';
   
