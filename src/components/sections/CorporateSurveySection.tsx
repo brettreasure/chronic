@@ -77,7 +77,7 @@ export function CorporateSurveySection() {
                     {index === 0 && (
                       <>
                         <motion.div
-                          className="mb-16"
+                          className="mb-32"
                           initial={{ opacity: 0, y: 30 }}
                           animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                           transition={{ duration: 0.8, delay: 0.2 }}
