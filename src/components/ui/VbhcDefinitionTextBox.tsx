@@ -2,11 +2,11 @@
 
 import { motion } from 'framer-motion';
 
-interface NewVbhcTextBoxProps {
+interface VbhcDefinitionTextBoxProps {
   isVisible: boolean;
 }
 
-export function NewVbhcTextBox({ isVisible }: NewVbhcTextBoxProps) {
+export function VbhcDefinitionTextBox({ isVisible }: VbhcDefinitionTextBoxProps) {
   return (
     <motion.div
       className="w-2/3 max-w-2xl mx-auto text-center rounded-lg p-8 shadow-lg text-white"
@@ -35,7 +35,7 @@ export function NewVbhcTextBox({ isVisible }: NewVbhcTextBoxProps) {
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Exercise As Medicine
+        A quick definition
       </motion.h2>
       <motion.p 
         className="text-lg sm:text-xl font-body leading-relaxed mb-6"
@@ -43,24 +43,20 @@ export function NewVbhcTextBox({ isVisible }: NewVbhcTextBoxProps) {
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        Exercise has been shown to be as effective as pharmacological treatments but addresses multiple chronic conditions at once. Exercise is accessible, low-cost and within the control of the individual.
+        <strong>Value-Based Healthcare (VBHC)</strong> is a model that rewards exercise physiologists for delivering measurable improvements in their clients&apos; health outcomes—rather than simply providing services—by focusing on prevention, function, and long-term impact.
       </motion.p>
-      <motion.h2 
-        className="text-2xl sm:text-3xl font-headline font-bold mb-4"
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
-        Compliance
-      </motion.h2>
-      <motion.p 
-        className="text-lg sm:text-xl font-body leading-relaxed"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.6, delay: 0.8 }}
-      >
-        Since exercise is medicine, we need to prescribe the right dose at the right time for the right reason. And compliance improves efficacy. The 4 Point Medex system is the gold standard: an 84% compliance rate.
-      </motion.p>
+        <h3 className="text-xl sm:text-2xl font-headline font-bold mb-3">
+          VBHC in Practice
+        </h3>
+        <p className="text-lg sm:text-xl font-body leading-relaxed">
+          By capturing PRIMS (Provider-Reported Importance Measures), PREMS (Patient-Reported Experience Measures), and PROMS (Patient-Reported Outcome Measures), EPs can demonstrate real-world impact, support funding conversations, and continuously align care with what matters most to patients.
+        </p>
+      </motion.div>
     </motion.div>
   );
 }

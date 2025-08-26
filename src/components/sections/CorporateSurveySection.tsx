@@ -9,7 +9,7 @@ import { VerticalBarChart } from '@/components/charts/VerticalBarChart';
 import { CircularProgress } from '@/components/ui/CircularProgress';
 import { ChronicConditionsInfographic } from '@/components/ui/ChronicConditionsInfographic';
 import { BenefitsInfographic } from '@/components/ui/BenefitsInfographic';
-import { surveyData } from '@/data/surveyData';
+import { corporateSurveyData } from '@/data/surveyData';
 
 export function CorporateSurveySection() {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
@@ -62,7 +62,7 @@ export function CorporateSurveySection() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
-{surveyData.map((item, index) => (
+{corporateSurveyData.map((item, index) => (
           <div key={index}>
             <div
               ref={(el) => {

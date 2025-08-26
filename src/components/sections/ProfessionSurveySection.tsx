@@ -3,14 +3,15 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { TextBox } from '@/components/ui/TextBox';
+import { CorporateTextBox } from '@/components/ui/CorporateTextBox';
 import { HorizontalBarChart } from '@/components/charts/HorizontalBarChart';
 import { VerticalBarChart } from '@/components/charts/VerticalBarChart';
 import { CircularProgress } from '@/components/ui/CircularProgress';
 import { ChronicConditionsInfographic } from '@/components/ui/ChronicConditionsInfographic';
 import { OriginalBenefitsInfographic } from '@/components/ui/OriginalBenefitsInfographic';
-import { surveyData } from '@/data/surveyData';
+import { professionSurveyData } from '@/data/surveyData';
 
-export function SurveySection() {
+export function ProfessionSurveySection() {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
   const [isBenefitsVisible, setIsBenefitsVisible] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
@@ -61,7 +62,7 @@ export function SurveySection() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
-        {surveyData.map((item, index) => (
+        {professionSurveyData.map((item, index) => (
           <div
             key={index}
             ref={(el) => {
@@ -72,11 +73,11 @@ export function SurveySection() {
           >
             <div className="min-h-screen flex items-center justify-center">
               {!item.hasGraph ? (
-                <div className="flex flex-col items-center space-y-12">
+                <div className="flex flex-col items-center">
                   {index === 0 && (
                     <>
                       <motion.div
-                        className="mb-16"
+                        className="mb-32"
                         initial={{ opacity: 0, y: 30 }}
                         animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -98,34 +99,51 @@ export function SurveySection() {
                           }
                         />
                       </motion.div>
+                      
+                      {/* $82B textbox positioned above the 84% circle */}
                       <motion.div
+                        className="mb-32"
                         initial={{ opacity: 0, y: 30 }}
                         animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                       >
-                        <CircularProgress
-                          percentage={84}
+                        <CorporateTextBox
+                          heading="$82B"
                           isVisible={visibleItems.has(index)}
-                          size={200}
-                          strokeWidth={24}
+                          variant="dark-cyan"
                         />
                       </motion.div>
                     </>
                   )}
+                  {index === 0 && (
+                    <motion.div
+                      className="mt-12"
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                      transition={{ duration: 0.8, delay: 0.6 }}
+                    >
+                      <CircularProgress
+                        percentage={84}
+                        isVisible={visibleItems.has(index)}
+                        size={200}
+                        strokeWidth={24}
+                      />
+                    </motion.div>
+                  )}
                   <motion.p
-                    className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body text-center max-w-2xl leading-relaxed"
+                    className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body text-center max-w-2xl leading-relaxed mt-12"
                     initial={{ opacity: 0, y: 20 }}
                     animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.6, delay: 0.8 }}
+                    transition={{ duration: 0.6, delay: index === 0 ? 0.8 : 0.2 }}
                   >
                     {item.text}
                   </motion.p>
                   {item.footnote && (
                     <motion.p
-                      className="text-sm text-gray-600 dark:text-gray-400 font-body text-center max-w-2xl leading-relaxed"
+                      className="text-sm text-gray-600 dark:text-gray-400 font-body text-center max-w-2xl leading-relaxed mt-4"
                       initial={{ opacity: 0, y: 20 }}
                       animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                      transition={{ duration: 0.6, delay: 1.0 }}
+                      transition={{ duration: 0.6, delay: index === 0 ? 1.0 : 0.4 }}
                     >
                       {item.footnote?.startsWith('*') ? (
                         <>
@@ -189,11 +207,54 @@ export function SurveySection() {
                       )}
                     </>
                   )}
+                  
+                  {/* Add VBHC quote after individual needs chart (index 3) */}
+                  {index === 3 && (
+                    <motion.div
+                      className="mt-16 max-w-3xl mx-auto text-center"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      transition={{ duration: 0.8, delay: 0.8 }}
+                    >
+                      <div className="space-y-6 text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-body leading-relaxed">
+                        <p>
+                          <strong className="text-[#4fcdc4] italic">&ldquo;VBHC is multidisciplinary; it positions EPs alongside specialists, nurses and GPs. It validates exercise physiology as a core component of chronic disease management, rather than an adjunct. And it increases collaborative care models that include EPs in shared-care plans.&rdquo;</strong>
+                          <br />
+                          - Katie Stewart, Co-founder
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+
                 </div>
               )}
             </div>
           </div>
         ))}
+
+        {/* Add momentum text after improved symptoms chart (index 4) */}
+        <motion.div
+          className="mb-32 flex items-center justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <motion.p
+            className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body text-center max-w-2xl leading-relaxed"
+          >
+            Momentum:{' '}
+            <a 
+              href="https://www.interwellhealth.com/resources/insights/healthcare-utilization-trends-in-2025-how-health-plans-use-value-based-care-to-manage-costs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#4fcdc4] hover:text-[#004146] transition-colors no-underline"
+            >
+              growing payer interest
+            </a>{' '}
+            in value-based care models in the U.S.
+          </motion.p>
+        </motion.div>
         
         {/* Benefits Infographic Section */}
         <div

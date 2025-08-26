@@ -7,15 +7,12 @@ import { CorporateSurveySection } from "@/components/sections/CorporateSurveySec
 import { Footer } from "@/components/sections/Footer";
 import { RibbonBackground } from "@/components/ui/RibbonBackground";
 import { NewVbhcTextBox } from "@/components/ui/NewVbhcTextBox";
-import { ComplianceTextBox } from "@/components/ui/ComplianceTextBox";
 
 export default function Corporate() {
   const [isMedexVisible, setIsMedexVisible] = useState(false);
   const [isNewVbhcVisible, setIsNewVbhcVisible] = useState(false);
-  const [isComplianceVisible, setIsComplianceVisible] = useState(false);
   const medexRef = useRef<HTMLDivElement>(null);
   const newVbhcRef = useRef<HTMLDivElement>(null);
-  const complianceRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,8 +22,6 @@ export default function Corporate() {
             setIsMedexVisible(entry.isIntersecting);
           } else if (entry.target === newVbhcRef.current) {
             setIsNewVbhcVisible(entry.isIntersecting);
-          } else if (entry.target === complianceRef.current) {
-            setIsComplianceVisible(entry.isIntersecting);
           }
         });
       },
@@ -41,9 +36,6 @@ export default function Corporate() {
     }
     if (newVbhcRef.current) {
       observer.observe(newVbhcRef.current);
-    }
-    if (complianceRef.current) {
-      observer.observe(complianceRef.current);
     }
 
     return () => {
@@ -80,11 +72,6 @@ export default function Corporate() {
               </p>
             </div>
           </motion.div>
-        </div>
-      </section>
-      <section ref={complianceRef} className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="container mx-auto">
-          <ComplianceTextBox isVisible={isComplianceVisible} />
         </div>
       </section>
       <Footer />

@@ -1,8 +1,11 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 export function RibbonBackground() {
+  const [paths, setPaths] = useState<string[]>(['', '', '']);
+
   // Generate path data for three meandering lines
   const generatePath = (offset: number, separation: number) => {
     const points = [];
@@ -51,9 +54,13 @@ export function RibbonBackground() {
     return `M ${points.join(' L ')}`;
   };
 
-  const line1Path = generatePath(0, -2);
-  const line2Path = generatePath(Math.PI * 0.7, 0);
-  const line3Path = generatePath(Math.PI * 1.4, 2);
+  useEffect(() => {
+    // Generate paths only on client side to prevent hydration mismatch
+    const line1Path = generatePath(0, -2);
+    const line2Path = generatePath(Math.PI * 0.7, 0);
+    const line3Path = generatePath(Math.PI * 1.4, 2);
+    setPaths([line1Path, line2Path, line3Path]);
+  }, []);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -76,7 +83,7 @@ export function RibbonBackground() {
         
         {/* First line */}
         <motion.path
-          d={line1Path}
+          d={paths[0]}
           stroke="white"
           strokeWidth="0.45"
           fill="none"
@@ -92,7 +99,7 @@ export function RibbonBackground() {
         
         {/* Second line */}
         <motion.path
-          d={line2Path}
+          d={paths[1]}
           stroke="white"
           strokeWidth="0.45"
           fill="none"
@@ -108,7 +115,7 @@ export function RibbonBackground() {
         
         {/* Third line */}
         <motion.path
-          d={line3Path}
+          d={paths[2]}
           stroke="white"
           strokeWidth="0.45"
           fill="none"

@@ -84,6 +84,9 @@ export function CorporateTextBox({ heading, isVisible, variant = 'default' }: Co
             </a>
           </sup>
         </p>
+        <p>
+          Now, here are the research results...
+        </p>
       </motion.div>
     </motion.div>
   );
