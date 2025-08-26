@@ -54,20 +54,6 @@ export const surveyData: SurveyDataPoint[] = [
     },
   },
   {
-    heading: "97%",
-    text: "97% said their individual needs were supported",
-    hasGraph: true,
-    variant: "dark-cyan",
-    graph: {
-      title: "Individual needs",
-      data: [
-        { label: "Didn't fit my needs", description: "Didn't fit my individual needs", value: 3, color: "#ff6b6b" },
-        { label: "Yes - in most ways", description: "Yes - in most ways", value: 26, color: "#4ecdc4" },
-        { label: "Yes - very much so", description: "Yes - very much so", value: 71, color: "#004146" },
-      ],
-    },
-  },
-  {
     heading: "95%",
     text: "95% would recommend the program to others",
     hasGraph: true,

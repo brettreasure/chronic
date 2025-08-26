@@ -73,7 +73,7 @@ export function CorporateSurveySection() {
             >
               <div className="min-h-screen flex items-center justify-center">
                 {!item.hasGraph ? (
-                  <div className="flex flex-col items-center space-y-12">
+                  <div className="flex flex-col items-center">
                     {index === 0 && (
                       <>
                         <motion.div
@@ -117,6 +117,7 @@ export function CorporateSurveySection() {
                     )}
                     {index === 0 && (
                       <motion.div
+                        className="mt-12"
                         initial={{ opacity: 0, y: 30 }}
                         animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
@@ -130,7 +131,7 @@ export function CorporateSurveySection() {
                       </motion.div>
                     )}
                     <motion.p
-                      className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body text-center max-w-2xl leading-relaxed"
+                      className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body text-center max-w-2xl leading-relaxed mt-12"
                       initial={{ opacity: 0, y: 20 }}
                       animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                       transition={{ duration: 0.6, delay: index === 0 ? 0.8 : 0.2 }}
@@ -139,7 +140,7 @@ export function CorporateSurveySection() {
                     </motion.p>
                     {item.footnote && (
                       <motion.p
-                        className="text-sm text-gray-600 dark:text-gray-400 font-body text-center max-w-2xl leading-relaxed"
+                        className="text-sm text-gray-600 dark:text-gray-400 font-body text-center max-w-2xl leading-relaxed mt-4"
                         initial={{ opacity: 0, y: 20 }}
                         animate={visibleItems.has(index) ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                         transition={{ duration: 0.6, delay: index === 0 ? 1.0 : 0.4 }}
