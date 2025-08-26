@@ -4,9 +4,10 @@ import { motion } from 'framer-motion';
 
 interface NewVbhcTextBoxProps {
   isVisible: boolean;
+  variant?: 'home' | 'profession';
 }
 
-export function NewVbhcTextBox({ isVisible }: NewVbhcTextBoxProps) {
+export function NewVbhcTextBox({ isVisible, variant = 'profession' }: NewVbhcTextBoxProps) {
   return (
     <motion.div
       className="w-2/3 max-w-2xl mx-auto text-center rounded-lg p-8 shadow-lg text-white"
@@ -51,7 +52,7 @@ export function NewVbhcTextBox({ isVisible }: NewVbhcTextBoxProps) {
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.6 }}
       >
-        Compliance
+        {variant === 'home' ? 'Motivation' : 'Compliance'}
       </motion.h2>
       <motion.p 
         className="text-lg sm:text-xl font-body leading-relaxed"
@@ -59,7 +60,10 @@ export function NewVbhcTextBox({ isVisible }: NewVbhcTextBoxProps) {
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.8 }}
       >
-        Since exercise is medicine, we need to prescribe the right dose at the right time for the right reason. And compliance improves efficacy. The 4 Point Medex system is the gold standard: an 84% compliance rate.
+        {variant === 'home' 
+          ? "Since exercise is medicine, we need to prescribe the right dose at the right time for the right reason. And medicine only works if you TAKE IT, i.e. you need motivation. Our 4 Point Medex system is the gold standard in this regard, with clients achieving an 84% attendance rate."
+          : "Since exercise is medicine, we need to prescribe the right dose at the right time for the right reason. And compliance improves efficacy. The 4 Point Medex system is the gold standard: an 84% compliance rate."
+        }
       </motion.p>
     </motion.div>
   );

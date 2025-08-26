@@ -44,7 +44,7 @@ export default function Home() {
       </main>
       <section ref={newVbhcRef} className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="container mx-auto">
-          <NewVbhcTextBox isVisible={isNewVbhcVisible} />
+          <NewVbhcTextBox isVisible={isNewVbhcVisible} variant="home" />
         </div>
       </section>
       <Footer variant="home" />
