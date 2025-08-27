@@ -1,7 +1,8 @@
-export function Footer({ variant }: { variant?: 'profession' | 'home' } = {}) {
+export function Footer({ variant }: { variant?: 'profession' | 'home' | 'health' } = {}) {
   const getHeading = () => {
     if (variant === 'profession') return 'VBHC training';
     if (variant === 'home') return 'Got time to talk?';
+    if (variant === 'health') return 'Talk to Katie direct';
     return 'Talk to Katie direct';
   };
 
