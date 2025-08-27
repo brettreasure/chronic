@@ -17,7 +17,7 @@ export function HealthHeroSection() {
           
           <div className="max-w-3xl mx-auto space-y-6 text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-body leading-relaxed">
             <p>
-              <strong className="text-[#4fcdc4] italic">&ldquo;There's an early mover advantage in this innovative care model<br />that focuses on outcomes, not just services rendered.&rdquo;</strong>
+              <strong className="text-[#4fcdc4] italic">&ldquo;There&apos;s an early mover advantage in this innovative care model<br />that focuses on outcomes, not just services rendered.&rdquo;</strong>
               <br />
               - Katie Stewart, Co-founder
               <br /><br />
