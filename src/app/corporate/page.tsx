@@ -6,7 +6,7 @@ import { CorporateHeroSection } from "@/components/sections/CorporateHeroSection
 import { CorporateSurveySection } from "@/components/sections/CorporateSurveySection";
 import { Footer } from "@/components/sections/Footer";
 import { RibbonBackground } from "@/components/ui/RibbonBackground";
-import { NewVbhcTextBox } from "@/components/ui/NewVbhcTextBox";
+import { CorporateVbhcTextBox } from "@/components/ui/CorporateVbhcTextBox";
 
 export default function Corporate() {
   const [isMedexVisible, setIsMedexVisible] = useState(false);
@@ -52,7 +52,7 @@ export default function Corporate() {
       </main>
       <section ref={newVbhcRef} className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="container mx-auto">
-          <NewVbhcTextBox isVisible={isNewVbhcVisible} />
+          <CorporateVbhcTextBox isVisible={isNewVbhcVisible} />
         </div>
       </section>
       <section ref={medexRef} className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">

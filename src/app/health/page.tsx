@@ -5,7 +5,7 @@ import { HealthHeroSection } from "@/components/sections/HealthHeroSection";
 import { HealthSurveySection } from "@/components/sections/HealthSurveySection";
 import { Footer } from "@/components/sections/Footer";
 import { RibbonBackground } from "@/components/ui/RibbonBackground";
-import { NewVbhcTextBox } from "@/components/ui/NewVbhcTextBox";
+import { HealthVbhcTextBox } from "@/components/ui/HealthVbhcTextBox";
 import { HealthVbhcDefinitionTextBox } from "@/components/ui/HealthVbhcDefinitionTextBox";
 
 export default function Health() {
@@ -57,7 +57,7 @@ export default function Health() {
       </main>
       <section ref={newVbhcRef} className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="container mx-auto">
-          <NewVbhcTextBox isVisible={isNewVbhcVisible} />
+          <HealthVbhcTextBox isVisible={isNewVbhcVisible} />
         </div>
       </section>
       <Footer variant="health" />

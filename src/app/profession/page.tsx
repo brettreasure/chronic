@@ -5,7 +5,7 @@ import { ProfessionHeroSection } from "@/components/sections/ProfessionHeroSecti
 import { ProfessionSurveySection } from "@/components/sections/ProfessionSurveySection";
 import { Footer } from "@/components/sections/Footer";
 import { RibbonBackground } from "@/components/ui/RibbonBackground";
-import { NewVbhcTextBox } from "@/components/ui/NewVbhcTextBox";
+import { ProfessionVbhcTextBox } from "@/components/ui/ProfessionVbhcTextBox";
 import { VbhcDefinitionTextBox } from "@/components/ui/VbhcDefinitionTextBox";
 
 export default function Profession() {
@@ -57,7 +57,7 @@ export default function Profession() {
       </main>
       <section ref={newVbhcRef} className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="container mx-auto">
-          <NewVbhcTextBox isVisible={isNewVbhcVisible} />
+          <ProfessionVbhcTextBox isVisible={isNewVbhcVisible} />
         </div>
       </section>
       <Footer variant="profession" />
