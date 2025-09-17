@@ -288,7 +288,7 @@ export const professionSurveyData: SurveyDataPoint[] = [
   },
 ];
 
-// Health-specific data with PREM/PROM suffixes (used only by health page)
+// Health-specific data (used only by health page)
 export const healthSurveyData: SurveyDataPoint[] = [
   {
     heading: "84%",
@@ -303,7 +303,7 @@ export const healthSurveyData: SurveyDataPoint[] = [
     hasGraph: true,
     variant: "dark-cyan",
     graph: {
-      title: "Service level: PREM",
+      title: "Service level",
       data: [
         { label: "Satisfactory", description: "Satisfactory", value: 3, color: "#ff6b6b" },
         { label: "Strong in most areas", description: "Strong in most areas", value: 26, color: "#4ecdc4" },
@@ -318,7 +318,7 @@ export const healthSurveyData: SurveyDataPoint[] = [
     variant: "dark-cyan",
     footnote: "*The right dose of exercise medicine at the right time, for the right reason, has been proved more effective than some prescriptive drugs. Getting the dose right and ensuring compliance are vital for high value outcomes.",
     graph: {
-      title: "Difficulty: PREM",
+      title: "Difficulty",
       data: [
         { label: "Had trouble", description: "Had trouble adhering to the program", value: 8, color: "#ff6b6b" },
         { label: "Fairly easy", description: "Fairly easy", value: 23, color: "#4ecdc4" },
@@ -332,7 +332,7 @@ export const healthSurveyData: SurveyDataPoint[] = [
     hasGraph: true,
     variant: "dark-cyan",
     graph: {
-      title: "Individual needs: PREM",
+      title: "Individual needs",
       data: [
         { label: "Not designed for me", value: 0, color: "#ff6b6b" },
         { label: "Somewhat designed", value: 26, color: "#4ecdc4" },
@@ -346,7 +346,7 @@ export const healthSurveyData: SurveyDataPoint[] = [
     hasGraph: true,
     variant: "dark-cyan",
     graph: {
-      title: "Recommendation: PREM",
+      title: "Recommendation",
       data: [
         { label: "Won't recommend", description: "Would not recommend", value: 0, color: "#ff6b6b" },
         { label: "May recommend", description: "May recommend", value: 5, color: "#4ecdc4" },
@@ -361,7 +361,7 @@ export const healthSurveyData: SurveyDataPoint[] = [
     variant: "dark-cyan",
     isVerticalChart: true,
     graph: {
-      title: "Improved symptoms: PROM",
+      title: "Improved symptoms",
       data: [
         { label: "One or more symptoms", value: 88, color: "#8B1538" },
         { label: "Two or more symptoms", value: 61, color: "#8B1538" },
@@ -374,7 +374,7 @@ export const healthSurveyData: SurveyDataPoint[] = [
     hasGraph: true,
     variant: "dark-cyan",
     graph: {
-      title: "Significance: PREM",
+      title: "Significance",
       data: [
         { label: "No value", value: 1, color: "#ff6b6b" },
         { label: "Some value", value: 42, color: "#4ecdc4" },
