@@ -69,17 +69,6 @@ export default function Health() {
           </div>
         </section>
         
-        <section className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="container mx-auto max-w-4xl text-center">
-            <h2 className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body mb-6 leading-relaxed">
-              VBHC in Practice
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-body leading-relaxed">
-              By capturing PRIMS (Provider-Reported Importance Measures), PREMS (Patient-Reported Experience Measures), and PROMS (Patient-Reported Outcome Measures), EPs can demonstrate real-world impact, support funding conversations, and continuously align care with what matters most to patients.
-            </p>
-          </div>
-        </section>
-        
         <HealthSurveySection />
       </main>
       <section ref={newVbhcRef} className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">

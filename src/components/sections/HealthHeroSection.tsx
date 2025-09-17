@@ -21,7 +21,7 @@ export function HealthHeroSection() {
               <br />
               - Katie Stewart, Co-founder
               <br /><br />
-              This one-pager describes real world evidence on the efficacy of Value-Based Healthcare, and its transformative potential for stakeholders. Within that framework we report an Exercise as Medicine intervention.
+              This one-pager describes real world evidence on the efficacy of Value-Based Healthcare, and its transformative potential for stakeholders. Within that framework we report an<br />Exercise as Medicine intervention.
             </p>
           </div>
 
