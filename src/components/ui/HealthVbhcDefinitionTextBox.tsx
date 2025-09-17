@@ -9,7 +9,7 @@ interface HealthVbhcDefinitionTextBoxProps {
 export function HealthVbhcDefinitionTextBox({ isVisible }: HealthVbhcDefinitionTextBoxProps) {
   return (
     <motion.div
-      className="w-2/3 max-w-2xl mx-auto text-center rounded-lg p-8 shadow-lg text-white"
+      className="w-2/3 max-w-2xl mx-auto text-left rounded-lg p-8 shadow-lg text-white"
       style={{ backgroundColor: '#004146' }}
       initial={{ opacity: 0, y: 50, scale: 0.8 }}
       animate={isVisible ? { 

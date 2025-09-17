@@ -63,7 +63,19 @@ export default function Health() {
               An insurer funds a structured exercise program for diabetes, but reimbursement is tied to improvements in HbA1c, mobility and quality of life (not just a number of sessions). Compliance becomes a measured outcome.
             </p>
             <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-body leading-relaxed">
-              Chronic Care runs a 12-week program using a 4 Point Medex system. Scroll down for breakthroughs in compliance, results and loyalty.
+              Chronic Care runs a 12-week program using a 4 Point Medex system.<br />
+              Scroll down for breakthroughs in compliance, results and loyalty.
+            </p>
+          </div>
+        </section>
+        
+        <section className="py-8 px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-2xl sm:text-3xl text-gray-700 dark:text-gray-300 font-body mb-6 leading-relaxed">
+              VBHC in Practice
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 font-body leading-relaxed">
+              By capturing PRIMS (Provider-Reported Importance Measures), PREMS (Patient-Reported Experience Measures), and PROMS (Patient-Reported Outcome Measures), EPs can demonstrate real-world impact, support funding conversations, and continuously align care with what matters most to patients.
             </p>
           </div>
         </section>
