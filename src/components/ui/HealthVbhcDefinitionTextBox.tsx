@@ -35,7 +35,7 @@ export function HealthVbhcDefinitionTextBox({ isVisible }: HealthVbhcDefinitionT
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        A quick definition
+        Value-Based Healthcare
       </motion.h2>
       <motion.p 
         className="text-lg sm:text-xl font-body leading-relaxed mb-6"
@@ -43,7 +43,7 @@ export function HealthVbhcDefinitionTextBox({ isVisible }: HealthVbhcDefinitionT
         animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
       >
-        <strong>Value-Based Healthcare (VBHC)</strong> is a model that rewards exercise physiologists for delivering measurable improvements in their clients&apos; health outcomes—rather than simply providing services—by focusing on prevention, function, and long-term impact.
+        A system-level reform that aligns payment and care models with measurable improvements in client health outcomes—rather than simply providing services. It focuses on prevention, function, and long-term impact.
       </motion.p>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -51,10 +51,10 @@ export function HealthVbhcDefinitionTextBox({ isVisible }: HealthVbhcDefinitionT
         transition={{ duration: 0.6, delay: 0.6 }}
       >
         <h3 className="text-xl sm:text-2xl font-headline font-bold mb-3">
-          VBHC in Practice
+          Exercise As Medicine
         </h3>
         <p className="text-lg sm:text-xl font-body leading-relaxed">
-          By capturing PRIMS (Provider-Reported Importance Measures), PREMS (Patient-Reported Experience Measures), and PROMS (Patient-Reported Outcome Measures), we can measure real-world impact, support funding conversations, and continuously align care with what matters most to patients.
+          Exercise has proved as effective as pharmacological treatments but addresses multiple chronic conditions at once. It&apos;s accessible, low-cost and within the control of the individual. We embed exercise as a first-line treatment for chronic conditions, with structured prescriptions (dosage, supervision and adherence strategies).
         </p>
       </motion.div>
     </motion.div>

@@ -21,7 +21,7 @@ export function HealthHeroSection() {
               <br />
               - Katie Stewart, Co-founder
               <br /><br />
-              Real world evidence on the efficacy of Value-Based Healthcare, and its transformative potential for stakeholders. Chronic Care runs a 12-week program using a 4 Point Medex system. Scroll down to see how this approach drives compliance, adherence, results and loyalty. A breakthrough in the fight against chronic illnesses.
+              This one-pager describes real world evidence on the efficacy of Value-Based Healthcare, and its transformative potential for stakeholders. Within that framework we report an Exercise as Medicine intervention.
             </p>
           </div>
 
